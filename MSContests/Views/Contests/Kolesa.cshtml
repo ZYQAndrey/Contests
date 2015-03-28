@@ -1,0 +1,216 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Колёса+";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("Index", "Home")"></a>
+    </div>
+</div>
+
+<div class="page-region">
+    <div class="page-region-content">
+        <fieldset class="bg-image-kolesa">
+            <legend>Конкурс клиентских приложений для портала kolesa.kz</legend>
+            <div>
+                <div style="float: right">
+                    <h2><span style="margin: 0px 40px; font-weight: bold" class="fg-color-white">ДО ЗАВЕРШЕНИЯ КОНКУРСА</span></h2>
+                    <div>
+                        <div id="clock">
+                            <p>
+                                <span id="weeks"></span>
+                                <span style="padding: 20px; font-size: 12px">НЕДЕЛИ</span>
+                            </p>
+                            <div class="space">:</div>
+                            <p>
+                                <span id="daysLeft"></span>
+                                <span style="padding: 20px; font-size: 12px">ДНИ</span>
+                            </p>
+                            <div class="space">:</div>
+                            <p>
+                                <span id="hours"></span>
+                                <span style="padding: 20px; font-size: 12px">ЧАСЫ</span>
+                            </p>
+                            <div class="space">:</div>
+                            <p>
+                                <span id="minutes"></span>
+                                <span style="padding: 20px; font-size: 12px">МИНУТЫ</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-region">
+                    <div class="page-region-content" style="padding: 20px">
+                        <h2 class="fg-color-white">
+                            Настала пора для серьёзной работы!
+                        </h2>
+                        <br />
+                        <h3 class="fg-color-white">
+                            Компании "Microsoft Kazakhstan", "Nokia" и "Колёса" объявляют конкурс на создание лучших мобильных клиентов для портала kolesa.kz на платформах Windows 8 и Windows Phone!<br />
+                            Именно ваше решение будет самым лучшим и получит награды сразу от трёх компаний!
+                        </h3>
+                        <br />
+                        <h2 class="fg-color-white">
+                            Такого ещё не было! Не упустите свой шанс!
+                        </h2>
+                        <!--<img src="~/Images/WheelDev.png" style="float: left;margin: 0 30px 0 " width="150" />-->
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div>
+            <h2><span>ЗАДАНИЕ</span></h2>
+            <div class="grid">
+                <div class="row">
+                    <span>
+                        Задача следующая. Все в Казахстане знают портал <a href="http://kolesa.kz" title="Колёса" target="_blank">kolesa.kz</a>. В рамках конкурса команде (состоит она из одного человека или из нескольких - не принципиально) необходимо создать приложения -
+                        нативные клиенты портала на платформе Windows 8 и Windows Phone, обладающие функциональностью, определяемой @Html.ActionLink("техническим заданием", "KolesaTechRequest", "Register", routeValues: null, htmlAttributes: null) с использованием API,
+                        предоставляемого порталом.<br/>
+                        Созданные приложения не публикуются в магазинах приложений. Вместо этого авторы загружают пакеты приложений, готовые для публикации, на сайт соревнования (для этого нужно зарегистрироваться, и по готовности - загружать пакеты со страницы регистрации).<br/>
+                        Организаторы соревнования будут рассматривать загруженные приложения на предмет соответствия их предъявляемым требованиям и 31 января жюри, состоящим из представителей Microsoft Kazakhstan и ТОО "Колёса", будут выбраны три лучших решения, которые получат призы. Команда, занявшая первое место, получит возможность продолжить работу над проектом, но уже вместе с представителями компании "Колёса"
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2><span>ПРИЗЫ</span></h2>
+            <div class="grid">
+                <div class="row">
+                    <div class="span10">
+                        <ol class="round">
+                            <li class="one">
+                                <h3>Призы от Microsoft - планшеты на платформе Windows 8.1</h3>
+                                <span>Приложения выбираются жюри от Майкрософт Казахстан, Nokia и Колёса. Критерии: богатый функционал, нативный Windows 8 дизайн, использование новых функций Windows 8.1, соответствие требованиям  @Html.ActionLink("технического задания", "KolesaTechRequest", "Register", routeValues: null, htmlAttributes: null) </span>
+                            </li>
+                            <li>
+                            <li class="two">
+                                <h3>Призы от Nokia - смартфоны серии Lumia</h3>
+                                <span>Приложения выбираются жюри от Майкрософт Казахстан, Nokia и Колёса. Критерии: богатый функционал, нативный Windows Phone дизайн, использование новых функций Windows Phone, соответствие требованиям @Html.ActionLink("технического задания", "KolesaTechRequest", "Register", routeValues: null, htmlAttributes: null)</span>
+                            </li>
+                            <li class="three">
+                                <h3>Приз от Колёс - контракт с победителем</h3>
+                                <span>Компания "Колёса" выберет команду, проект которой будет наиболее полно удовлетворять требованиям @Html.ActionLink("технического задания", "KolesaTechRequest", "Register", routeValues: null, htmlAttributes: null) и может быть доработан до коммерческого уровня, с включением всех функций, которыми обладает портал. Если таковая найдётся, ТОО "Колёса" предложит выбранной команде доработку приложения вместе с заказчиком.</span>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="offset10">
+                        <div class="carousel" data-role="carousel" style="height: 300px; width: 300px;" data-param-effect="slide" data-param-direction="left" data-param-duration="2000" data-param-period="4000">
+                            <div class="slides">
+                                <div class="slide mixed" id="slide1">
+                                    <img src="~/Images/Nokia-Lumia-1520-full-HD-display.jpg" height="300" />
+                                    <div class="description">
+                                        <a href="http://www.nokia.com/gb-en/phones/phone/lumia1520/" target="_blank" style="color: white"> Nokia Lumia 1520 за первое место</a>
+                                    </div>
+                                </div>
+
+                                <div class="slide mixed" id="slide2">
+                                    <img src="~/Images/Lumia-625.jpg" height="300" />
+                                    <div class="description" style="color: white">
+                                        <a href="http://www.nokia.com/gb-en/phones/phone/lumia625/" target="_blank" style="color: white"> Nokia Lumia 625 за второе место</a>
+                                    </div>
+                                </div>
+
+                                <div class="slide mixed" id="slide3">
+                                    <img src="~/Images/Lumia-520-sensitive-screen.jpg" height="300" />
+                                    <div class="description">
+                                        <a href="http://www.nokia.com/gb-en/phones/phone/lumia520/" target="_blank" style="color: white"> Nokia Lumia 520 за третье место</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="@Url.Action("KolesaConditions","Register")">
+                    <button type="button">Условия участия</button>
+                </a>
+                <a href="@Url.Action("CreateKolesa","Register")">
+                    <button class="active">Участвовать</button>
+                </a>
+            </div>
+            <hr />
+            <div class="grid">
+                <div class="row">
+                    <div class="span2">
+                        <h2><span>УЧАСТНИКИ</span></h2>
+                        <a href="@Url.Action("KolesaList", "Contests", new { finishDate = "2014/01/31" })">
+                            <div class="tile bg-color-blue" data-role="tile-slider" data-param-period="3000">
+                                <div class="tile-content" style="text-align: center">
+                                    <h3>В ДАННОЕ ВРЕМЯ</h3>
+                                </div>
+                                <div class="tile-content" style="text-align: center">
+                                    <h3>В КОНКУРСЕ УЧАСТВУЕТ</h3>
+                                </div>
+                                <div class="tile-content" style="text-align: center">
+                                    <h1>@ViewBag.Count</h1>
+                                    <br />
+                                    <h3>ПРОЕКТОВ</h3>
+                                </div>
+                                <div class="brand">
+                                    <img class="icon" src="~/Images/Curly_Brackets.png" />
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="offset10">
+                        <div style="padding-left: 30px">
+                            <h2>ПОСЛЕДНИЕ ПРИСОЕДИНИВШИЕСЯ:</h2>
+                            <ul class="listview fluid">
+                                @foreach (UploadRequest item in ViewBag.lastAdded)
+                                {
+                                    <li>
+                                        @if (item.FileW8 != null)
+                                        {
+                                            <div class="icon">
+                                                <img src="~/Images/Windows8Ticked.png" alt="Приложение уже загружено" />
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="icon">
+                                                <img src="~/Images/Windows8.png" alt="Приложение ещё не загружено" />
+                                            </div>
+                                        }
+
+                                        <div class="data">
+                                            @Html.DisplayFor(modelItem => item.FirstName) &nbsp; @Html.DisplayFor(modelItem => item.LastName)
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    // Javascript
+    $(function () {
+        var currentDate = new Date();
+        $('div#clock').countdown("2014/01/31", function (event) {
+            $this = $(this);
+            switch (event.type) {
+                case "seconds":
+                case "minutes":
+                case "hours":
+                case "days":
+                case "weeks":
+                case "daysLeft":
+                    $this.find('span#' + event.type).html(event.value);
+                    break;
+                case "finished":
+                    $this.fadeTo('slow', .5);
+                    break;
+            }
+        });
+    });
+</script>
+
+
+

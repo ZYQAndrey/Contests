@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MSContests.Models.Request>
+
+@{
+    ViewBag.Title = "Участники";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action(ViewBag.BackLink, "Contests")"></a>
+    </div>
+</div>
+
+<div id="navcontainer">
+    <ul class="listview fluid">
+        @foreach (var item in Model)
+        {
+            <li>
+                <div class="icon">
+                    <img src="~/Images/WP8.png" alt="@Html.DisplayFor(modelItem => item.AppName)" />
+                </div>
+                <div class="data">
+                    <a href="@Html.DisplayFor(modelItem => item.WPhoneAppUrl)" target="_blank">@Html.DisplayFor(modelItem => item.AppName)</a>
+                    @if (item.Windows8App)
+                    {
+                        <span> + </span><img src="~/Images/Windows8.png" /><a href="@Html.DisplayFor(modelItem => item.AppUrl)" target="_blank">Windows 8</a>
+                    }
+                </div>
+            </li>
+        }
+    </ul>
+</div>

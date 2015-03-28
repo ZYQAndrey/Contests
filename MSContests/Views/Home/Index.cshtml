@@ -1,0 +1,155 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+}
+
+<div id="top" class="header">
+    <div class="vert-text">
+        <h1>Конкурсы с Microsoft KZ</h1>
+        <h3>
+            <em>Вы</em> Создаёте Великолепные Приложения,
+            <em>Мы</em> Награждаем Лучших!
+        </h3>
+        @*<a href="#about" class="btn btn-default btn-lg">Find Out More</a>*@
+    </div>
+</div>
+<!-- /Full Page Image Header Area -->
+<!-- Intro -->
+<div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center" id="members">
+                <div style="width:100%;">
+                    <a href="~/Contests/UniversalityCompleted">
+                        <img src="~/Images/Universality.png" style="max-width:100%;"  />
+                    </a>
+                </div>
+                <h2>Конкурс "Универсум" завершился!</h2>
+                <p class="lead">Узнай имена победителей конкурса по созданию универсальных приложений для Windows 8.1, Windows Phone 8.1, Android и iOS!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Intro -->
+<!-- Services -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h2>Узнай больше</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-md-offset-2 text-center">
+                <div class="service-item">
+                    <a href="http://msdn.microsoft.com/ru-ru/library/windows/apps/bg125376" target="_blank">
+                        <i class="service-icon fa fa-pencil" style="color:white"></i>
+                    </a>
+                    <h4>Начало</h4>
+                    <p>Ваше первое приложение для Магазина Windows</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="service-item">
+                    <a href="http://msdn.microsoft.com/ru-ru/ff380143" target="_blank">
+                        <i class="service-icon fa fa-windows" style="color:white"></i>
+                    </a>
+                    <h4>Windows 8</h4>
+                    <p>Центр разработки для Магазина Windows</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="service-item">
+                    <a href="http://msdn.microsoft.com/ru-ru/ff380145" target="_blank">
+                        <i class="service-icon fa fa-mobile-phone" style="color:white"></i>
+                    </a>
+                    <h4>Windows Phone</h4>
+                    <p>Центр разработки для Магазина Windows Phone</p>
+                </div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="service-item">
+                    <a href="http://azure.microsoft.com/ru-ru/documentation/services/mobile-services/" target="_blank">
+                        <i class="service-icon fa fa-cloud" style="color:white"></i>
+                    </a>
+                    <h4>Windows Azure</h4>
+                    <p>Мобильные Сервисы для разработчиков в Windows Azure</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Services -->
+<!-- Callout -->
+@*<div class="callout">
+        <div class="vert-text">
+            <h1>A Dramatic Text Area</h1>
+        </div>
+    </div>*@
+<!-- /Callout -->
+<!-- Portfolio -->
+<div id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h2>Прошлые конкурсы</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2 text-center">
+                <div class="portfolio-item">
+                    <a href="/Contests/KolesaCompleted">
+                        <img class="img-portfolio img-responsive" src="~/Images/auto1.png">
+                    </a>
+                    <h4>Колёса+</h4>
+                    <div>Конкурс приложений для портала kolesa.kz! Напиши 2 приложения (W8 + WP) и получи водопад призов</div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="portfolio-item">
+                    <a href="/Contests/FallWinterCompleted">
+                        <img class="img-portfolio img-responsive" src="~/Images/alex.png">
+                    </a>
+                    <h4>Золотая осень!</h4>
+                    <div>Хочешь получить самую новую Nokia Lumia 1020? Или быть как Пушкин? Тогда участвуй в конкурсе этой осенью!</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2 text-center">
+                <div class="portfolio-item">
+                    <a href="/Contests/SunnySummerCompleted">
+                        <img class="img-portfolio img-responsive" src="~/Images/sunny.png">
+                    </a>
+                    <h4>Здравствуй, лето!</h4>
+                    <div>Напиши приложение для Windows Phone и Windows 8 и получи новый смартфон!</div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="portfolio-item">
+                    <a href="/Contests/NauryzCompleted">
+                        <img class="img-portfolio img-responsive" src="~/Images/nauryz.png">
+                    </a>
+                    <h4>Добавь Наурыз в Windows Store!</h4>
+                    <div>Напиши приложение для Windows 8 или Windows Phone и получи подарок к празднику Наурыз!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Portfolio -->
+<!-- Call to Action -->
+@*<div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <h3>The buttons below are impossible to resist.</h3>
+                    <a href="#" class="btn btn-lg btn-default">Click Me!</a>
+                    <a href="#" class="btn btn-lg btn-primary">Look at Me!</a>
+                </div>
+            </div>
+        </div>
+    </div>*@
+<!-- /Call to Action -->

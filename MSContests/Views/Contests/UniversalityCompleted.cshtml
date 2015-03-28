@@ -1,0 +1,194 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Универсум";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+}
+@*<script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/jquery.ui.touch-punch.min.js"></script>*@
+
+<div class="callout5">
+    <div class="vert-text">
+        <h1>@ViewBag.Title</h1>
+        <h4>Меняем парадигму! Пишем "Универсальные" Приложения!</h4>
+    </div>
+</div>
+
+<!-- Intro -->
+<div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <p class="lead">
+                    Конкурс "Универсум" завершился! В нём были представлены пять проектов. Задание было сложным, но участники с блеском выполнили его и
+                    теперь мы можем установить на свои смартфоны и планшеты несколько новых интересных и полезных приложений! Надеюсь, что всем, кто представил свои проекты,
+                    и всем, кто пока только готовится поучаствовать в наших конкурсах, было интересно работать над проектами, попробовать новые инструменты и новые подходы
+                    к разработке!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Intro -->
+<!-- Presentation -->
+<div class="call-to-action">
+    <div class="container">
+        <h2><span>ПОБЕДИТЕЛИ И ПРИЗЫ</span></h2>
+        <div class="grid">
+            @*<h4>Создайте приложение для нескольких платформ в рамках одного проекта до 30 ноября</h4>*@
+            <div class="row">
+                <div class="span10">
+                    <ol class="round">
+                        <li class="one">
+                            <h3>Лучшее Универсальное Windows 8.1 приложение</h3>
+                            <span>
+                                В этой категории победил Иван Казаков с проектом Alaport. Приложение создано для платформ Windows 8.1 и Windows Phone 8.1&nbsp;<img src="~/Images/DuoW.png" />. <br />
+                                Хочется отметить внимание разработчиков к дизайну приложения.
+                            </span>
+                            <h4>Приз: <a href="http://www.nokia.com/kz-ru/phones/phone/lumia1020/" target="_blank" style="text-decoration: none; color: white"> Nokia Lumia 1020</a></h4>
+                        </li>
+                        <li>
+                        <li class="two">
+                            <h3>Лучшее мультиплатформенное приложение</h3>
+                            <span>
+                                В этой категории победила команда UnderFly (Ерасыл Шалабаев) с очень интересным и оригинальным проектом Talk To Future. Ребята сделали его на четырёх платформах (Windows Phone 8.1, Windows 8.1, Android и iOS). Кроме того, приложения используют web-бэкграунд. <br />
+                                Подробнее о проекте и о стартапе можно почитать на <a href="http://idea-lab.kz/2014/08/08/talk-to-future/">http://idea-lab.kz</a>
+                            </span>
+                            <h4>Призы: <a href="http://www.nokia.com/kz-ru/phones/phone/lumia1520/" target="_blank" style="text-decoration: none; color: white"> Nokia Lumia 1520</a> и <a href="http://www.nokia.com/kz-ru/phones/phone/nokia-x/" target="_blank" style="text-decoration: none; color: white"> Nokia X</a></h4>
+                        </li>
+                    </ol>
+                    <br/>
+                    Победители могут получить свои призы в алматинском офисе Microsoft. 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Presentation -->
+<!-- Portfolio -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <table>
+                <tr style="vertical-align:top;">
+                    <td>
+                        <div class="col-md-4 text-center">
+                            <div class="service-item">
+                                <h2><span>УЧАСТНИКИ</span></h2>
+                                <div id="members">
+                                    <a href="@Url.Action("UniversalityList","Contests", new { finishDate = "2014/11/30"})">
+                                        <h3>В КОНКУРСЕ УЧАСТВОВАЛО</h3>
+                                        <h1>@ViewBag.Count</h1>
+                                        <h3>ПРОЕКТОВ</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>ПОСЛЕДНИЕ ДОБАВЛЕННЫЕ:</h2>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div id="navcontainer">
+                                        <h4>Универсальные</h4>
+                                        <table>
+                                            <tr>
+                                                @foreach (var item in ViewBag.LastAddedU as List<UniversalApp>)
+                                                {
+                                                    <td>
+                                                        <div class="icon" style="padding-right:20px;padding-left:20px;">
+                                                            <img src="~/Images/DuoW1.png" />
+                                                        </div>
+
+                                                        <div class="data" style="padding-right:20px;padding-left:20px;">
+                                                            <a href='@item.W8AppUrl' target="_blank">@Html.DisplayFor(modelItem => item.W8AppName)</a>
+                                                        </div>
+                                                    </td>
+                                                }
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div id="navcontainer">
+                                        <h4>Мультиплатформенные</h4>
+                                        <table>
+                                            <tr>
+                                                @foreach (var item in ViewBag.LastAddedM as List<MultiPlatformApp>)
+                                                {
+                                                    <td>
+                                                        <div class="icon" style="padding-right:20px;padding-left:20px;">
+                                                            <img src="~/Images/Mobile-Phone-Message.png" />
+                                                        </div>
+
+                                                        <div class="data" style="padding-right:20px;padding-left:20px;">
+                                                            <a href='@item.W8AppUrl' target="_blank">@Html.DisplayFor(modelItem => item.W8AppName)</a>
+                                                        </div>
+                                                    </td>
+                                                }
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Services -->
+<div id="services" class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                Поздравляем победителей и благодарим всех, кто принял участие в конкурсе и представил свои проекты!!!
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Services -->
+@*<script type="text/javascript">
+    $('#clock').countdown('2014/11/30', function (event) {
+        var $this = $(this).html(event.strftime(
+                '<div class="col-md-2 col-md-offset-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%w</i><h4>недель</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%d</i><h4>дней</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%H</i><h4>часов</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%M</i><h4>минут</h4></div></div>'));
+    });
+</script>*@
+
+<script type="text/javascript">
+    $('nav li ul').hide().removeClass('fallback');
+    $('nav li').hover(
+      function () {
+          $('ul', this).stop().slideDown(100);
+      },
+      function () {
+          $('ul', this).stop().slideUp(100);
+      }
+    );
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

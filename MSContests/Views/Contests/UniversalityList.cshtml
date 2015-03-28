@@ -1,0 +1,95 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Участники";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        @*<a class="back-button big page-back" title="Назад" href="@Url.Action(ViewBag.BackLink, "Contests")"></a>*@
+    </div>
+</div>
+
+
+<table>
+    <tr>
+        <th>
+            УНИВЕРСАЛЬНЫЕ:
+        </th>
+        <td>
+            <div id="navcontainer">
+                <table>
+                    <tr>
+                        @foreach (var item in ViewBag.allAppsU as List<UniversalApp>)
+                        {
+                            <td style="padding-right:10px;">
+                                <div class="icon">
+                                    <img src="~/Images/WP8.png" alt="@Html.DisplayFor(modelItem => item.WpAppName)" />
+                                </div>
+                                <div class="data">
+                                    <a href='@item.WpAppUrl' target="_blank">@Html.DisplayFor(modelItem => item.WpAppName)</a>
+                                </div>
+                            </td>
+                            <td style="padding-right:10px;">
+                                <div class="icon">
+                                    <img src="~/Images/Windows8.png" alt="@Html.DisplayFor(modelItem => item.W8AppName)" />
+                                </div>
+                                <div class="data">
+                                    <a href='@item.W8AppUrl' target="_blank">@Html.DisplayFor(modelItem => item.W8AppName)</a>
+                                </div>
+                            </td>
+                        }
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            МУЛЬТИ-ПЛАТФОРМЕННЫЕ:
+        </th>
+        <td>
+            <div id="navcontainer">
+                <table>
+                    <tr>
+                        @foreach (var item in ViewBag.allAppsM as List<MultiPlatformApp>)
+                        {
+                            <td style="padding-right:10px;">
+                                <div class="icon">
+                                    <img src="~/Images/WP8.png" alt="@Html.DisplayFor(modelItem => item.WpAppName)" />
+                                </div>
+                                <div class="data">
+                                    <a href='@item.WpAppUrl' target="_blank">@Html.DisplayFor(modelItem => item.WpAppName)</a>
+                                </div>
+                            </td>
+                            <td style="padding-right:10px;">
+                                <div class="icon">
+                                    <img src="~/Images/Windows8.png" alt="@Html.DisplayFor(modelItem => item.W8AppName)" />
+                                </div>
+                                <div class="data">
+                                    <a href='@item.W8AppUrl' target="_blank">@Html.DisplayFor(modelItem => item.W8AppName)</a>
+                                </div>
+                            </td>
+                            <td style="padding-right:10px;">
+                                <div class="icon">
+                                    <img src="~/Images/Android.png" alt="@Html.DisplayFor(modelItem => item.GoogleAppName)" />
+                                </div>
+                                <div class="data">
+                                    <a href='@item.GoogleAppUrl' target="_blank">@Html.DisplayFor(modelItem => item.GoogleAppName)</a>
+                                </div>
+                            </td>
+                            <td style="padding-right:10px;">
+                                <div class="icon">
+                                    <img src="~/Images/Apple.png" alt="@Html.DisplayFor(modelItem => item.AppleAppName)" />
+                                </div>
+                                <div class="data">
+                                    <a href='@item.AppleAppUrl' target="_blank">@Html.DisplayFor(modelItem => item.AppleAppName)</a>
+                                </div>
+                            </td>
+                        }
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>

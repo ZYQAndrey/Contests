@@ -1,0 +1,143 @@
+﻿@model MSContests.Models.Request
+
+@{
+    ViewBag.Title = "Удалить заявку";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("Index", "Register")"></a>
+    </div>
+</div>
+ 
+<div class="page-region">
+    <div class="page-region-content">
+        <h3>Вы уверены, что хотите удалить эту заявку?</h3>
+        <div class="page-control" data-role="page-control">
+            <ul>
+                <li class="active"><a href="#frame1">Приложение</a></li>
+                <li><a href="#frameN">Данные заявителя</a></li>
+            </ul>
+            <div class="frames">
+                <div class="frame active" id="frame1">
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.AppName)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.AppName)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.AppUrl)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.AppUrl)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.DemoUrl)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.DemoUrl)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.WPhoneAppUrl)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.WPhoneAppUrl)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.WPhone8App)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.WPhone8App)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.WAzureApp)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.WAzureApp)
+                    </div><br/>
+                    
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.RegisterDate)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.RegisterDate)
+                    </div><br/>
+                    
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.ApprovalDate)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.ApprovalDate)
+                    </div>
+                </div>
+                <div class="frame" id="frameN"> 
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.LastName)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.LastName)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.FirstName)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.FirstName)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b> @Html.DisplayNameFor(model => model.Email)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Email)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.Country)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Country)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.City)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.City)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.Position)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Position)
+                    </div><br/>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.AreYouAStudent)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.AreYouAStudent)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        @using (Html.BeginForm()) {
+            <p>
+                <input type="submit" value="Удалить" />
+            </p>
+        }
+        
+    </div>
+</div>
+

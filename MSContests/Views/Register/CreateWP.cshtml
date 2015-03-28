@@ -1,0 +1,157 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@model MSContests.Models.Request
+
+@{
+    ViewBag.Title = "Добавить приложение";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("FallWinter", "Contests")"></a>
+    </div>
+</div>
+ 
+<div class="page-region">
+    <div class="page-region-content">
+
+        @using (Html.BeginForm()) {
+            @Html.ValidationSummary(true)
+            <br/>
+            <hr/>
+            <br/>
+            <div class="grid">
+                <div class="row">
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AppName)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.AppName)<br/>
+                            @Html.ValidationMessageFor(model => model.AppName)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.WPhoneAppUrl)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.WPhoneAppUrl)
+                            @Html.ValidationMessageFor(model => model.WPhoneAppUrl)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.DemoUrl)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.DemoUrl)<br/>
+                            @Html.ValidationMessageFor(model => model.DemoUrl)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        @Html.CheckBoxFor(model => model.Windows8App, new {type="checkbox"})
+                        @Html.LabelFor(model => model.Windows8App, new {@class="helper"})<br/>
+                        @Html.ValidationMessageFor(model => model.Windows8App)
+                    </div>
+                     <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AppUrl)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.AppUrl)<br/>
+                            @Html.ValidationMessageFor(model => model.AppUrl)
+                        </div>
+                    </div>
+                    <div class="span5" hidden="hidden">
+                        @Html.CheckBoxFor(model => model.WAzureApp)
+                        @Html.LabelFor(model => model.WAzureApp)<br/>
+                        @Html.ValidationMessageFor(model => model.WAzureApp)
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <br/>
+            <div class="grid">
+                <div class="row">
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.LastName)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.LastName)<br/>
+                            @Html.ValidationMessageFor(model => model.LastName)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.FirstName)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.FirstName)<br/>
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Email)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Email)<br/>
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Country)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Country)<br/>
+                            @Html.ValidationMessageFor(model => model.Country)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.City)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.City)
+                            @Html.ValidationMessageFor(model => model.City)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Position)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Position)
+                            @Html.ValidationMessageFor(model => model.Position)
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AreYouAStudent)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.AreYouAStudent)
+                            @Html.ValidationMessageFor(model => model.AreYouAStudent)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.MathCaptcha("Обновить", "Антиспам проверка")
+            <div class="form__footer">
+                <div>
+                    Заявки проходят модерацию <br>в течение двух рабочих дней. 
+                </div><br/>
+                <input type="submit" value="Отправить заявку"/>
+            </div>
+        }
+    </div>
+</div>
+
+
+    @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

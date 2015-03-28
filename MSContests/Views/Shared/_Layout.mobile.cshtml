@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/mobile")*@
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*@Scripts.Render("~/bundles/metro")*@
+
+</head>
+<body>
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        </ul>
+    </div>
+    <div class="container body-content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.Partial("_LoginPartial")
+        }
+        @RenderBody()
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/groups/MSTechClubKZ/"><i class="fa fa-facebook fa-3x"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/msdev" target="_blank"><i class="fa fa-twitter fa-3x"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://www.microsoft.com/ru-kz/default.aspx" target="_blank"><i class="fa fa-windows fa-3x"></i></a>
+                            </li>
+                        </ul>
+                        <div class="top-scroll">
+                            <a href="#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a>
+                        </div>
+                        <hr>
+                        <p>&copy; @DateTime.Now.Year - Конкурсы приложений на tech-club.kz</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+<script>
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+</script>
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+</script>
+<script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>

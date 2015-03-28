@@ -1,0 +1,42 @@
+﻿@model MSContests.Models.Request
+
+@{
+    ViewBag.Title = "Заявка успешно отправлена";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action(ViewBag.BackLink, "Contests")"></a>
+    </div>
+</div>
+ 
+<div class="page-region">
+    <div class="page-region-content">
+        <fieldset>
+            <h2>Благодарим за участие в конкурсе! Ваша заявка принята на рассмотрение!</h2>
+            <h3>Желаем хорошего кодинга!</h3>
+        </fieldset>
+        <fieldset>
+            <legend>ЗАЯВКА НА УЧАСТИЕ</legend>
+            <h3>Пожалуйста, распечатайте, либо сохраните где-нибудь информацию, представленную ниже. Номер заявки понадобится Вам для получения приза.</h3><br/>
+                <div>
+                    <b>Номер заявки:</b><br/>
+                    @Html.DisplayFor(model => model.Id)
+                </div>
+            <br/>
+            <div>
+                <b>@Html.DisplayNameFor(model => model.AppName):</b><br/>
+                @Html.DisplayFor(model => model.AppName)
+            </div>
+            <br/>
+            <div>
+                <b>Автор:</b><br/>
+                @Html.DisplayFor(model => model.FirstName)&nbsp;@Html.DisplayFor(model => model.LastName)
+            </div>
+            <br/>
+        </fieldset>
+    </div>
+</div>
+
+

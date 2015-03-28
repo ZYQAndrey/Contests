@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCE00F65-3E2C-4830-87A8-CCEA1B34FFF6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MSContests</RootNamespace>
+    <AssemblyName>MSContests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CaptchaMvc">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddressController.cs" />
+    <Compile Include="Controllers\ContestsController.cs" />
+    <Compile Include="Controllers\GamesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MultiPlatformAppsController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407161456321_newModel.cs" />
+    <Compile Include="Migrations\201407161456321_newModel.Designer.cs">
+      <DependentUpon>201407161456321_newModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407171312483_newClasses.cs" />
+    <Compile Include="Migrations\201407171312483_newClasses.Designer.cs">
+      <DependentUpon>201407171312483_newClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407171316240_newClasses1.cs" />
+    <Compile Include="Migrations\201407171316240_newClasses1.Designer.cs">
+      <DependentUpon>201407171316240_newClasses1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407180141549_newClasses2.cs" />
+    <Compile Include="Migrations\201407180141549_newClasses2.Designer.cs">
+      <DependentUpon>201407180141549_newClasses2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201407180218147_newClasses3.cs" />
+    <Compile Include="Migrations\201407180218147_newClasses3.Designer.cs">
+      <DependentUpon>201407180218147_newClasses3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501272235346_addGamesClass.cs" />
+    <Compile Include="Migrations\201501272235346_addGamesClass.Designer.cs">
+      <DependentUpon>201501272235346_addGamesClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Competitor.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\MultiPlatformApp.cs" />
+    <Compile Include="Models\Request.cs" />
+    <Compile Include="Models\RequestRating.cs" />
+    <Compile Include="Models\UniversalApp.cs" />
+    <Compile Include="Controllers\UniversalAppsController.cs" />
+    <Compile Include="Models\UploadRequest.cs" />
+    <Compile Include="Models\ViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utils\Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery-mobile\images\ajax-loader.gif" />
+    <Content Include="Content\jquery-mobile\images\icons-png\action-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\action-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\alert-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\alert-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-d-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-d-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-l-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-l-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-r-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-r-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-u-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\arrow-u-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\audio-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\audio-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\back-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\back-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\bars-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\bars-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\bullets-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\bullets-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\calendar-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\calendar-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\camera-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\camera-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\carat-d-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\carat-d-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\carat-l-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\carat-l-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\carat-r-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\carat-r-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\carat-u-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\carat-u-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\check-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\check-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\clock-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\clock-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\cloud-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\cloud-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\comment-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\comment-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\delete-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\delete-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\edit-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\edit-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\eye-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\eye-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\forbidden-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\forbidden-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\forward-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\forward-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\gear-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\gear-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\grid-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\grid-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\heart-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\heart-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\home-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\home-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\info-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\info-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\location-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\location-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\lock-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\lock-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\mail-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\mail-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\minus-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\minus-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\navigation-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\navigation-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\phone-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\phone-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\plus-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\plus-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\power-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\power-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\recycle-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\recycle-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\refresh-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\refresh-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\search-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\search-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\shop-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\shop-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\star-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\star-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\tag-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\tag-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\user-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\user-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\video-black.png" />
+    <Content Include="Content\jquery-mobile\images\icons-png\video-white.png" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\action-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\action-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\alert-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\alert-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-d-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-d-l-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-d-l-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-d-r-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-d-r-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-d-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-l-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-l-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-r-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-r-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-u-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-u-l-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-u-l-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-u-r-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-u-r-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\arrow-u-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\audio-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\audio-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\back-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\back-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\bars-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\bars-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\bullets-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\bullets-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\calendar-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\calendar-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\camera-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\camera-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\carat-d-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\carat-d-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\carat-l-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\carat-l-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\carat-r-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\carat-r-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\carat-u-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\carat-u-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\check-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\check-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\clock-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\clock-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\cloud-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\cloud-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\comment-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\comment-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\delete-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\delete-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\edit-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\edit-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\eye-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\eye-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\forbidden-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\forbidden-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\forward-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\forward-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\gear-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\gear-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\grid-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\grid-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\heart-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\heart-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\home-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\home-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\info-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\info-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\location-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\location-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\lock-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\lock-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\mail-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\mail-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\minus-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\minus-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\navigation-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\navigation-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\phone-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\phone-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\plus-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\plus-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\power-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\power-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\recycle-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\recycle-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\refresh-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\refresh-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\search-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\search-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\shop-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\shop-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\star-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\star-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\tag-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\tag-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\user-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\user-white.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\video-black.svg" />
+    <Content Include="Content\jquery-mobile\images\icons-svg\video-white.svg" />
+    <Content Include="Content\jquery-mobile\jquery.mobile-1.4.3.min.css" />
+    <Content Include="Content\jquery-mobile\jquery.mobile.external-png-1.4.3.min.css" />
+    <Content Include="Content\jquery-mobile\jquery.mobile.icons-1.4.3.min.css" />
+    <Content Include="Content\jquery-mobile\jquery.mobile.inline-png-1.4.3.min.css" />
+    <Content Include="Content\jquery-mobile\jquery.mobile.inline-svg-1.4.3.min.css" />
+    <Content Include="Content\jquery-mobile\jquery.mobile.structure-1.4.3.min.css" />
+    <Content Include="Content\jquery-mobile\jquery.mobile.theme-1.4.3.min.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery.mobile-1.4.3.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\pure.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\stylish-portfolio.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="font-awesome\css\font-awesome.css" />
+    <Content Include="font-awesome\css\font-awesome.min.css" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\alex.png" />
+    <Content Include="Images\Android.png" />
+    <Content Include="Images\AppDevelopment_300x250.jpg" />
+    <Content Include="Images\Apple.png" />
+    <Content Include="Images\auto1.png" />
+    <Content Include="Images\AzureBAnner_300x250.png" />
+    <Content Include="Images\AzureHub.png" />
+    <Content Include="Images\AzureHub1.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\CurlyBrackets.png" />
+    <Content Include="Images\CurlyBrackets1.png" />
+    <Content Include="Images\Curly_Brackets.png" />
+    <Content Include="Images\Document-Check-Kaz.png" />
+    <Content Include="Images\Document-Check-Kaz1.png" />
+    <Content Include="Images\Document-Check.png" />
+    <Content Include="Images\Document-Check1.png" />
+    <Content Include="Images\Duo.png" />
+    <Content Include="Images\DuoW.png" />
+    <Content Include="Images\DuoW1.png" />
+    <Content Include="Images\Edit.png" />
+    <Content Include="Images\flower.png" />
+    <Content Include="Images\Garbage.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\HTC_8S_White.jpg" />
+    <Content Include="Images\HTC_8S_White_300.jpg" />
+    <Content Include="Images\HTC_8X_White.jpg" />
+    <Content Include="Images\HTC_8X_White_300.jpg" />
+    <Content Include="Images\IC_Logo.png" />
+    <Content Include="Images\image134.jpg" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\Joystick.png" />
+    <Content Include="Images\Kolesa\1.png" />
+    <Content Include="Images\Kolesa\11.png" />
+    <Content Include="Images\Kolesa\110.png" />
+    <Content Include="Images\Kolesa\12.png" />
+    <Content Include="Images\Kolesa\13.png" />
+    <Content Include="Images\Kolesa\14.png" />
+    <Content Include="Images\Kolesa\15.png" />
+    <Content Include="Images\Kolesa\16.png" />
+    <Content Include="Images\Kolesa\17.png" />
+    <Content Include="Images\Kolesa\18.png" />
+    <Content Include="Images\Kolesa\19.png" />
+    <Content Include="Images\Kolesa\21.png" />
+    <Content Include="Images\Kolesa\22.png" />
+    <Content Include="Images\Kolesa\23.png" />
+    <Content Include="Images\Kolesa\24.png" />
+    <Content Include="Images\Kolesa\25.png" />
+    <Content Include="Images\Kolesa\26.png" />
+    <Content Include="Images\Kolesa\27.png" />
+    <Content Include="Images\Kolesa\28.png" />
+    <Content Include="Images\Kolesa\29.png" />
+    <Content Include="Images\Kolesa\31.png" />
+    <Content Include="Images\Kolesa\32.png" />
+    <Content Include="Images\Kolesa\33.png" />
+    <Content Include="Images\Kolesa\34.png" />
+    <Content Include="Images\Kolesa\35.png" />
+    <Content Include="Images\Kolesa\36.png" />
+    <Content Include="Images\Kolesa\37.png" />
+    <Content Include="Images\Kolesa\38.png" />
+    <Content Include="Images\Kolesa\Kolesa11.png" />
+    <Content Include="Images\Kolesa\Kolesa12.png" />
+    <Content Include="Images\Kolesa\Kolesa13.png" />
+    <Content Include="Images\Kolesa\Kolesa14.png" />
+    <Content Include="Images\Kolesa\Kolesa15.png" />
+    <Content Include="Images\Kolesa\Kolesa16.png" />
+    <Content Include="Images\Kolesa\Kolesa21.png" />
+    <Content Include="Images\Kolesa\Kolesa22.png" />
+    <Content Include="Images\Kolesa\Kolesa23.png" />
+    <Content Include="Images\Kolesa\Kolesa24.png" />
+    <Content Include="Images\Kolesa\Kolesa25.png" />
+    <Content Include="Images\Kolesa\Kolesa26.png" />
+    <Content Include="Images\Kolesa\Kolesa31.png" />
+    <Content Include="Images\Kolesa\Kolesa32.png" />
+    <Content Include="Images\Kolesa\Kolesa33.png" />
+    <Content Include="Images\Kolesa\Kolesa34.png" />
+    <Content Include="Images\Kolesa\Kolesa35.png" />
+    <Content Include="Images\Kolesa\Kolesa36.png" />
+    <Content Include="Images\Lumia-520-sensitive-screen.jpg" />
+    <Content Include="Images\Lumia-625.jpg" />
+    <Content Include="Images\lumia920.png" />
+    <Content Include="Images\lumia920_large_verge_medium_landscape.png" />
+    <Content Include="Images\Lumia_800_white.jpg" />
+    <Content Include="Images\Lumia_800_white_300.jpg" />
+    <Content Include="Images\Mobile-Phone-Message.png" />
+    <Content Include="Images\nauryz.png" />
+    <Content Include="Images\Nokia-Lumia-1020-with-Nokia-Pro-Camera.jpg" />
+    <Content Include="Images\Nokia-Lumia-1520-full-HD-display.jpg" />
+    <Content Include="Images\nokia-lumia-920.png" />
+    <Content Include="Images\nokia-lumia-920_cropped.png" />
+    <Content Include="Images\Nokia-Lumia-925.jpg" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\PhoneHub.png" />
+    <Content Include="Images\PhoneHub1.png" />
+    <Content Include="Images\preloader-w8-cycle-black.gif" />
+    <Content Include="Images\preloader-w8-cycle-white.gif" />
+    <Content Include="Images\preloader-w8-line-black.gif" />
+    <Content Include="Images\preloader-w8-line-white.gif" />
+    <Content Include="Images\pushkin_10.jpg" />
+    <Content Include="Images\pushkin_10.png" />
+    <Content Include="Images\romashka-solncekopirovanie.png" />
+    <Content Include="Images\romashka-solncekopirovanie_small.png" />
+    <Content Include="Images\sunny.png" />
+    <Content Include="Images\surface2.png" />
+    <Content Include="Images\TabetHub.png" />
+    <Content Include="Images\TabetHub1.png" />
+    <Content Include="Images\tablet_samsung.png" />
+    <Content Include="Images\tablet_samsung_cropped.png" />
+    <Content Include="Images\tick.png" />
+    <Content Include="Images\Tools.png" />
+    <Content Include="Images\Tools1.png" />
+    <Content Include="Images\Universality.png" />
+    <Content Include="Images\Upload.png" />
+    <Content Include="Images\UploadBlack.png" />
+    <Content Include="Images\UploadWt.png" />
+    <Content Include="Images\VivoTab.jpg" />
+    <Content Include="Images\WheelDev.png" />
+    <Content Include="Images\Windows8.png" />
+    <Content Include="Images\Windows8Ticked.png" />
+    <Content Include="Images\WindowsAzure.png" />
+    <Content Include="Images\WindowsPhoneVideo.png" />
+    <Content Include="Images\WindowsPhoneVideo1.png" />
+    <Content Include="Images\WP8.png" />
+    <Content Include="Images\WP8Ticked.png" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\callout.jpg" />
+    <Content Include="img\callout1.jpg" />
+    <Content Include="img\callout2.jpg" />
+    <Content Include="img\callout3.jpg" />
+    <Content Include="img\callout4.jpg" />
+    <Content Include="img\callout5.jpg" />
+    <Content Include="img\callout6.jpg" />
+    <Content Include="img\portfolio-1.jpg" />
+    <Content Include="img\portfolio-2.jpg" />
+    <Content Include="img\portfolio-3.jpg" />
+    <Content Include="img\portfolio-4.jpg" />
+    <Content Include="Scripts\BackToTop.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="font-awesome\less\bordered-pulled.less" />
+    <Content Include="font-awesome\less\core.less" />
+    <Content Include="font-awesome\less\fixed-width.less" />
+    <Content Include="font-awesome\less\font-awesome.less" />
+    <Content Include="font-awesome\less\icons.less" />
+    <Content Include="font-awesome\less\larger.less" />
+    <Content Include="font-awesome\less\list.less" />
+    <Content Include="font-awesome\less\mixins.less" />
+    <Content Include="font-awesome\less\path.less" />
+    <Content Include="font-awesome\less\rotated-flipped.less" />
+    <Content Include="font-awesome\less\spinning.less" />
+    <Content Include="font-awesome\less\stacked.less" />
+    <Content Include="font-awesome\less\variables.less" />
+    <Content Include="font-awesome\scss\font-awesome.scss" />
+    <Content Include="font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="font-awesome\scss\_core.scss" />
+    <Content Include="font-awesome\scss\_fixed-width.scss" />
+    <Content Include="font-awesome\scss\_icons.scss" />
+    <Content Include="font-awesome\scss\_larger.scss" />
+    <Content Include="font-awesome\scss\_list.scss" />
+    <Content Include="font-awesome\scss\_mixins.scss" />
+    <Content Include="font-awesome\scss\_path.scss" />
+    <Content Include="font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="font-awesome\scss\_spinning.scss" />
+    <Content Include="font-awesome\scss\_stacked.scss" />
+    <Content Include="font-awesome\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\tech-club - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\tech-club - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-mobile\jquery.mobile-1.4.3.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-mobile\jquery.js" />
+    <Content Include="Scripts\jquery-mobile\jquery.min.js" />
+    <Content Include="Scripts\jquery-mobile\jquery.mobile-1.4.3.js" />
+    <Content Include="Scripts\jquery-mobile\jquery.mobile-1.4.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.countdown.js" />
+    <Content Include="Scripts\jquery.countdown.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.4.3.min.js" />
+    <Content Include="Scripts\jquery.ui.touch-punch.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Magnific-Popup\jquery.js" />
+    <Content Include="Scripts\Magnific-Popup\jquery.magnific-popup.js" />
+    <Content Include="Scripts\Magnific-Popup\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\Magnific-Popup\magnific-popup.css" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Address\Almaty.cshtml" />
+    <Content Include="Views\Address\Astana.cshtml" />
+    <Content Include="Views\Contests\FallWinter.cshtml" />
+    <Content Include="Views\Contests\FallWinterCompleted.cshtml" />
+    <Content Include="Views\Contests\FallWinterList.cshtml" />
+    <Content Include="Views\Contests\KazReg.cshtml" />
+    <Content Include="Views\Contests\Kolesa.cshtml" />
+    <Content Include="Views\Contests\KolesaCompleted.cshtml" />
+    <Content Include="Views\Contests\KolesaList.cshtml" />
+    <Content Include="Views\Contests\List.cshtml" />
+    <Content Include="Views\Contests\ListSummer.cshtml" />
+    <Content Include="Views\Contests\Nauryz.cshtml" />
+    <Content Include="Views\Contests\NauryzCompleted.cshtml" />
+    <Content Include="Views\Contests\RequestRating.cshtml" />
+    <Content Include="Views\Contests\SunnySummer.cshtml" />
+    <Content Include="Views\Contests\SunnySummerCompleted.cshtml" />
+    <Content Include="Views\Contests\Universality.cshtml" />
+    <Content Include="Views\Contests\UniversalityList.cshtml" />
+    <Content Include="Views\Register\Conditions.cshtml" />
+    <Content Include="Views\Register\Create.cshtml" />
+    <Content Include="Views\Register\CreateKolesa.cshtml" />
+    <Content Include="Views\Register\CreateWP.cshtml" />
+    <Content Include="Views\Register\Delete.cshtml" />
+    <Content Include="Views\Register\DeleteKolesa.cshtml" />
+    <Content Include="Views\Register\Details.cshtml" />
+    <Content Include="Views\Register\DetailsKolesa.cshtml" />
+    <Content Include="Views\Register\Edit.cshtml" />
+    <Content Include="Views\Register\EditKolesa.cshtml" />
+    <Content Include="Views\Register\EditKolesaAdm.cshtml" />
+    <Content Include="Views\Register\FallWinterConditions.cshtml" />
+    <Content Include="Views\Register\FilesUpload.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Register\IndexKolesa.cshtml" />
+    <Content Include="Views\Register\KolesaConditions.cshtml" />
+    <Content Include="Views\Register\KolesaTechRequest.cshtml" />
+    <Content Include="Views\Register\Success.cshtml" />
+    <Content Include="Views\Register\SuccessRegistered.cshtml" />
+    <Content Include="Views\Register\SuccessUpload.cshtml" />
+    <Content Include="Views\Register\SunnnySummerConditions.cshtml" />
+    <Content Include="Views\Shared\_WideLayout.cshtml" />
+    <Content Include="Views\Register\UniversalityConditions.cshtml" />
+    <Content Include="Views\MultiPlatformApps\Create.cshtml" />
+    <Content Include="Views\MultiPlatformApps\Delete.cshtml" />
+    <Content Include="Views\MultiPlatformApps\Edit.cshtml" />
+    <Content Include="Views\MultiPlatformApps\Details.cshtml" />
+    <Content Include="Views\MultiPlatformApps\Index.cshtml" />
+    <Content Include="Views\MultiPlatformApps\Success.cshtml" />
+    <Content Include="Views\UniversalApps\Delete.cshtml" />
+    <Content Include="Views\UniversalApps\Index.cshtml" />
+    <Content Include="Views\UniversalApps\Details.cshtml" />
+    <Content Include="Views\UniversalApps\Create.cshtml" />
+    <Content Include="Views\UniversalApps\Edit.cshtml" />
+    <Content Include="Views\UniversalApps\Success.cshtml" />
+    <Content Include="Views\Register\UniversalityConditions.mobile.cshtml" />
+    <Content Include="Views\Shared\_Layout.mobile.cshtml" />
+    <Content Include="Views\Contests\UniversalityCompleted.cshtml" />
+    <Content Include="Views\Games\Create.cshtml" />
+    <Content Include="Views\Games\Delete.cshtml" />
+    <Content Include="Views\Games\Details.cshtml" />
+    <Content Include="Views\Games\Edit.cshtml" />
+    <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\Games\Success.cshtml" />
+    <Content Include="Views\Contests\Games.cshtml" />
+    <Content Include="Views\Contests\GamesList.cshtml" />
+    <Content Include="Views\Register\GamesConditions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201407161456321_newModel.resx">
+      <DependentUpon>201407161456321_newModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407171312483_newClasses.resx">
+      <DependentUpon>201407171312483_newClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407171316240_newClasses1.resx">
+      <DependentUpon>201407171316240_newClasses1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407180141549_newClasses2.resx">
+      <DependentUpon>201407180141549_newClasses2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407180218147_newClasses3.resx">
+      <DependentUpon>201407180218147_newClasses3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501272235346_addGamesClass.resx">
+      <DependentUpon>201501272235346_addGamesClass.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12217</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12217/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

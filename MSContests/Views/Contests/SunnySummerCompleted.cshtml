@@ -1,0 +1,136 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Здравствуй, лето!";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+}
+
+<div class="callout3">
+    <div class="vert-text">
+        <h1>@ViewBag.Title</h1>
+        <h4>Здравствуй, лето красное!</h4>
+    </div>
+</div>
+
+<!-- Intro -->
+<div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <p class="lead">
+                    Завершился конкурс мобильных приложений "Здравствуй лето!"<br />
+                    Ребята постарались и, несмотря на загруженность (ведь для многих только закончилась сессия), написали несколько приложений!<br />
+                    Порадовало то, что пишутся приложения не только для одной платформы, но и парные - Windows 8 + Windows Phone!<br />
+                    Итак, пришло время назвать имена победителей в категориях...
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Intro -->
+<!-- Presentation -->
+<div class="call-to-action">
+    <div class="container">
+        <h2><span>ПОБЕДИТЕЛИ И ПРИЗЫ</span></h2>
+        <ol class="round">
+            <li class="one">
+                <h3>Самое интересное приложение</h3>
+                <span>Самым интересным приложением жюри назвало игру "Sort my stuff", созданную командой <b>VADA Lab</b> и опубликованую от имени <b>Али Нуралдина. Весёлая игрушка, начатая на HackDay в мае, сегодня доступна в Windows Phone Store</b></span>
+            </li>
+            <li>
+            <li class="two">
+                <h3>Самое популярное приложение за время конкурса</h3>
+                <span>В этой категории победил <b>Валихан Бектуров</b> с приложением "Аренда жилья", позволяющим заказывать жильё через всемирно известную систему Roomorama</span>
+            </li>
+            <li class="three">
+                <h3>Самое популярное студенческое приложение за время конкурса</h3>
+                <span>Победителем в этой категории стала <b>Бота Утебалиева</b> с приложением "KazData - путеводителем по Казахстану "</span>
+            </li>
+        </ol>
+        <hr />
+        <h2><span>СПЕЦИАЛЬНЫЙ ПРИЗ</span></h2>
+        <h3>Создайте ваше приложение для двух платформ (Windows 8 и Windows Phone) и получите специальный приз: планшет Asus VivoTab с Windows 8</h3>
+        <span>Победителем в данной номинации стал <b>Дулат Ходжаберген</b> с приложениями, посвящёнными горячо любимому народом всего мира жанру - аниме. Теперь вы сможете, используя созданные Дулатом приложения MangaCloud и Anidub, смотреть мультфильмы и читать комиксы прямо со своих мобильных устройств на Windows 8 и Windows Phone!  </span>
+    </div>
+</div>
+<!-- /Presentation -->
+<!-- Portfolio -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <table>
+                <tr style="vertical-align:top;">
+                    <td>
+                        <div class="col-md-4 text-center">
+                            <div class="service-item">
+                                <h2><span>УЧАСТНИКИ</span></h2>
+                                <div id="members">
+                                    <a href="@Url.Action("ListSummer","Contests", new { finishDate = "2013/06/30"})">
+                                        <p>В КОНКУРСЕ УЧАСТВОВАЛО</p>
+                                        <h1>@ViewBag.Count</h1>
+                                        <p>ПРОЕКТОВ</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>ПОСЛЕДНИЕ ДОБАВЛЕННЫЕ:</h2>
+                        <div id="navcontainer">
+                            <ul>
+                                @foreach (Request item in ViewBag.lastAdded)
+                                {
+                                    <li>
+                                        <div class="icon">
+                                            <img src="~/Images/WP8.png" />
+                                        </div>
+
+                                        <div class="data">
+                                            <a href="@Html.DisplayFor(modelItem => item.WPhoneAppUrl)" target="_blank">@Html.DisplayFor(modelItem => item.AppName)</a>
+                                            @if (item.Windows8App)
+                                            {
+                                                <span> + </span><img src="~/Images/Windows8.png" /><a href="@Html.DisplayFor(modelItem => item.AppUrl)" target="_blank">Windows 8</a>
+                                            }
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- /Portfolio -->
+<!-- Call to Action -->
+<div class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                Поздравляем победителей и благодарим всех, кто принял участие в конкурсе и представил свои проекты!!!
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Call to Action -->
+@*<script type="text/javascript" charset="utf-8">
+    // Javascript
+    $(function () {
+        var currentDate = new Date();
+        $('div#clock').countdown("2013/06/30", function (event) {
+            $this = $(this);
+            switch (event.type) {
+                case "seconds":
+                case "minutes":
+                case "hours":
+                case "days":
+                case "weeks":
+                case "daysLeft":
+                    $this.find('span#' + event.type).html(event.value);
+                    break;
+                case "finished":
+                    $this.fadeTo('slow', .5);
+                    break;
+            }
+        });
+    });
+</script>*@

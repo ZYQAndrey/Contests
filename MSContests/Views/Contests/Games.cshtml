@@ -1,0 +1,205 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Мобильные игры";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+}
+@*<script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/jquery.ui.touch-punch.min.js"></script>*@
+
+<div class="callout6">
+    <div class="vert-text">
+        <h1>@ViewBag.Title</h1>
+        <h4>Что наша жизнь? Игра!</h4>
+    </div>
+</div>
+
+<!-- Intro -->
+<div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-md-offset-2 text-left">
+                <div class="lead">
+                    <h2><strong>C 1 февраля до 31 марта</strong> пишем игры</h2>
+                    <p>Присоединяйся к десяткам&nbsp;лучших программистов и дизайнеров Казахстана, чтобы создать свою&nbsp;игру! </p>
+                    <p>Учись, пиши код, публикуй приложения для iOS, Android, Windows&nbsp;8&nbsp;и Windows&nbsp;Phone и получай призы!</p>
+                    <p>Никаких ограничений! Пиши на любом языке, используй любой движок! Мы можем лишь посоветовать, что тебе будет полезно, чтобы за два месяца создать работающую игру, которая будет доступна на всех платформах. Обрати внимание на следующее: </p>
+                    <ol start="1">
+                        <li><strong><a href="http://unity3d.com/" target="_blank">Unity</a></strong> - платформа великая и могучая. </li>
+                        <li><strong><a href="http://www.monogame.net/" target="_blank">MonoGame</a></strong> - для всех, кто любит и знает XNA</li>
+                        <li><strong><a href="http://www.cocos2d-x.org/" target="_blank">Cocos2d</a></strong> -&nbsp;теперь есть и С++, и JS-версия</li>
+                        <li><strong><a href="https://www.madewithmarmalade.com/" target="_blank">Marmalade</a></strong> - бесплатная, мульти-платформенная, да ещё и на С++</li>
+                        <li><strong><a href="https://www.scirra.com/construct2" target="_blank">Construct2</a></strong> - ты хочешь создавать 2D-игры, но не умеешь кодить? Тогда это - твой выбор! </li>
+                        <li><strong><a href="http://www.kodugamelab.com/" target="_blank">KODU Game Lab</a></strong> - на этой платформе смогут создавать целые миры даже дети!</li>
+                        <li>А если тебе хочется создать что-то с нуля, используя только свою голову, руки и немного терпения - мы будем рады увидеть результат твоего труда и оценить его!</li>
+                    </ol>
+                    <p>Как видишь, инструментов много. И мы думаем, что ты сможешь создать свой шедевр, который просто покорит мир!</p>
+                    <p>
+                        Если не знаешь, что выбрать, или как начать - на каждом из сайтов движков есть документация и туториалы. Кроме того, ты можешь пройти небольшие курсы по разработке игр на
+                        <a href="http://www.microsoftvirtualacademy.com/training-topics/game-development" target="_blank"> русском</a>, <a href="http://www.microsoftvirtualacademy.com/training-topics/game-development" target="_blank"> английском</a> и других языках,
+                        которые мы создали для тебя на сайте нашей <a href="http://mva.ms" target="_blank">онлайн Академии</a>.
+                    </p>
+                    <p>Обо всём, что касается разработки и публикации приложений для мобильных платформ от Microsoft, читай на <a href="http://dev.windows.com/ru-ru/" target="_blank">портале разработчиков</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Intro -->
+<!-- Presentation -->
+<div class="call-to-action">
+    <div class="container">
+        <h2><span>ЗАДАНИЕ</span></h2>
+        <div class="grid">
+            <h4>Создайте игру для одной или нескольких платформ до 31 марта</h4>
+            <div class="row">
+                <div class="span10">
+                    <ol class="round">
+                        <li class="one">
+                            <h3>Самая "навороченная" игра</h3>
+                            <span>
+                                Используя один из указанных движков (или без них), создайте игру с наибольшим количеством уровней и наиболее сложным игровым пространством. Обязательное условие - публикация приложения в магазинах Windows 8.1 и Windows Phone 8.1. В магазине такое приложение будет отмечено значком &nbsp;<img src="~/Images/DuoW.png" />. Тематика игры - любая.<br />
+                                Лучшее приложение выбирается жюри Майкрософт Казахстан. Критерии: богатый игровой мир, большое количество уровней. Наличие публикаций для других платформ - приветствуется.
+                            </span>
+                            <h4>Призы: <a href="http://www.nokia.com/kz-ru/phones/phone/lumia1020/" target="_blank" style="text-decoration:none; color:white"> Nokia Lumia 1020</a> и <a href="http://www.nokia.com/kz-ru/phones/phone/lumia830/" target="_blank" style="text-decoration:none; color:white"> Nokia Lumia 830</a></h4>
+                        </li>
+                        <li>
+                        <li class="two">
+                            <h3> Игра с самым интересным сюжетом</h3>
+                            <span>
+                                Используя один из указанных движков (или без них), создайте игру с самым интересным, необычным, новым сюжетом. Обязательное условие - публикация приложения в магазинах Windows 8.1 и Windows Phone 8.1. В магазине такое приложение будет отмечено значком &nbsp;<img src="~/Images/DuoW.png" />. Тематика игры - любая.<br />
+                                Лучшее приложение выбирается жюри Майкрософт Казахстан. Критерии: новизна сюжета, проработанность игрового пространства. Наличие публикаций для других платформ - приветствуется.
+                            </span>
+                            <h4>Приз: <a href="http://www.nokia.com/kz-ru/phones/phone/lumia1520/" target="_blank" style="text-decoration:none; color:white"> Nokia Lumia 1520</a> </h4>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <table>
+            <tr style="vertical-align:top">
+                <td>
+                    <a href="@Url.Action("GamesConditions","Register")">
+                        <button type="button" class="btn btn-info">Условия участия</button>
+                    </a>
+                </td>
+                <td>
+                    <div style="max-width:50%">
+                        <a href="@Url.Action("Create","Games")" style="text-decoration:none;" class="btn btn-primary">Участвовать</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- /Presentation -->
+<!-- Portfolio -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <table>
+                <tr style="vertical-align:top;">
+                    <td>
+                        <div class="col-md-4 text-center">
+                            <div class="service-item">
+                                <h2><span>УЧАСТНИКИ</span></h2>
+                                <div id="members">
+                                    <a href="@Url.Action("GamesList","Contests", new { finishDate = "2015/03/31"})">
+                                        <h3>СЕЙЧАС УЧАСТВУЕТ</h3>
+                                        <h1>@ViewBag.Count</h1>
+                                        <h3>ПРОЕКТОВ</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>ПОСЛЕДНИЕ ДОБАВЛЕННЫЕ:</h2>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div id="navcontainer">
+                                        <table>
+                                            <tr>
+                                                @foreach (var item in ViewBag.LastAdded as List<Game>)
+                                                {
+                                                    <td>
+                                                        <div class="icon" style="padding-right:20px;padding-left:20px;">
+                                                            <img src="~/Images/Mobile-Phone-Message.png" />
+                                                        </div>
+
+                                                        <div class="data" style="padding-right:20px;padding-left:20px;">
+                                                            <a href='@item.WpAppUrl' target="_blank">@Html.DisplayFor(modelItem => item.WpAppName)</a>
+                                                        </div>
+                                                    </td>
+                                                }
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Services -->
+<div id="services" class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h2>ДО ЗАВЕРШЕНИЯ КОНКУРСА</h2>
+            </div>
+        </div>
+        <div class="row" id="clock"></div>
+    </div>
+</div>
+<!-- /Services -->
+<script type="text/javascript">
+    $('#clock').countdown('2015/03/31', function (event) {
+        var $this = $(this).html(event.strftime(
+                '<div class="col-md-2 col-md-offset-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%w</i><h4>недель</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%d</i><h4>дней</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%H</i><h4>часов</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%M</i><h4>минут</h4></div></div>'));
+    });
+</script>
+
+@*<script type="text/javascript">
+        $('nav li ul').hide().removeClass('fallback');
+        $('nav li').hover(
+          function () {
+              $('ul', this).stop().slideDown(100);
+          },
+          function () {
+              $('ul', this).stop().slideUp(100);
+          }
+        );
+    </script>*@
+
+@*<script>
+        $(function () {
+            $("#menu").menu();
+        });
+    </script>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

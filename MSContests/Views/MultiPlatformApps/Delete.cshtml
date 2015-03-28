@@ -1,0 +1,115 @@
+﻿@model MSContests.Models.MultiPlatformApp
+
+@{
+    ViewBag.Title = "Удаление";
+    ViewBag.SubTitle = "Много-платформенное приложение (Windows 8.1, Windows Phone 8.1, Android, iOS)";
+    ViewBag.Question = "Вы уверены, что хотите удалить это приложение?";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>@ViewBag.Question</h3>
+<div>
+    <h4>@ViewBag.SubTitle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.W8AppName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.W8AppName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.W8AppUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.W8AppUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WpAppName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WpAppName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WpAppUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WpAppUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppleAppName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppleAppName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppleAppUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppleAppUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleAppName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleAppName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoogleAppUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoogleAppUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisterDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisterDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Approved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Approved)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться к списку", "Index")
+        </div>
+    }
+</div>

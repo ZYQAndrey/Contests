@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MSContests.Models.UploadRequest>
+
+@{
+    ViewBag.Title = "Список зарегистрировавшихся участников";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action(ViewBag.BackLink, "Contests")"></a>
+    </div>
+</div>
+
+<div class="page-region">
+    <div class="page-region-content">
+        <ul class="listview fluid">
+            @foreach (var item in Model)
+            {
+                <li>
+                    @if (item.FileW8 != null)
+                    {
+                        <div class="icon">
+                            <img src="~/Images/Windows8Ticked.png" alt="Приложение уже загружено"/>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="icon">
+                            <img src="~/Images/Windows8.png" alt="Приложение ещё не загружено" />
+                        </div>
+                    }
+                    <div class="data">
+                        @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

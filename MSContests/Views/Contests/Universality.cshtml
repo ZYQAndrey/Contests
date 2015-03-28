@@ -1,0 +1,205 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Универсум";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+}
+@*<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/jquery.ui.touch-punch.min.js"></script>*@
+
+<div class="callout5">
+    <div class="vert-text">
+        <h1>@ViewBag.Title</h1>
+        <h4>Меняем парадигму! Пишем "Универсальные" Приложения!</h4>
+    </div>
+</div>
+
+<!-- Intro -->
+<div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <p class="lead">
+                    Заветная мечта разработчика: "Моё приложение работает на любой платформе, на любом устройстве". Может ли она стать реальностью? Да!<br />
+                    Конечно, в реальном мире всё не так просто. Но ведь мы не пасуем перед трудностями! И награда за труды - почёт, уважение, слава, любовь пользователей!<br />
+                    Вам кажется, что это сказка? Давайте попробуем. Ведь у нас есть всё, что нужно - Visual Studio 2013 c возможностью создавать Universal Applications и с
+                    поддержкой Apache Cordova, есть Xamarin (для С#-гуру), есть PhoneGap и Telerik Platform (для HTML & JavaScript-lovers).
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Intro -->
+   
+    <!-- Presentation -->
+<div class="call-to-action">
+    <div class="container">
+        <h2><span>ЗАДАНИЕ</span></h2>
+        <div class="grid">
+            <h4>Создайте приложение для нескольких платформ в рамках одного проекта до 30 ноября</h4>
+            <div class="row">
+                <div class="span10">
+                    <ol class="round">
+                        <li class="one">
+                            <h3>Универсальное Windows 8.1 приложение</h3>
+                            <span>
+                                Используя шаблон решения "Universal Application" в Visual Studio создайте приложения для windows 8.1 и Windows Phone 8.1 c общей логикой и функциональностью. В магазине такое приложение будет отмечено значком &nbsp;<img src="~/Images/DuoW.png" />. Тематика приложения - любая, на ваше усмотрение.<br/>
+                                Лучшее приложение выбирается жюри Майкрософт Казахстан. Критерии: богатый функционал, нативный дизайн, использование новых функций Windows Phone 8.1 и Windows 8.1
+                            </span>
+                            <h4>Приз: <a href="http://www.nokia.com/kz-ru/phones/phone/lumia1020/" target="_blank" style="text-decoration:none; color:white"> Nokia Lumia 1020</a></h4>
+                        </li>
+                        <li>
+                        <li class="two">
+                            <h3>Мультиплатформенное приложение</h3>
+                            <span>
+                                Используя Multi-Device Hybrid Apps for Visual Studio 2013, или Xamarin, или PhoneGap, или Apache Cordova создайте мульти-платформенное приложение (нативное), которое будет иметь реализацию для Windows 8.1, Windows Phone 8.1, iOS и Android! <br />
+                                Лучшее приложение выбирается жюри Майкрософт Казахстан. Критерии: богатый функционал, нативный дизайн для каждой платформы, использование специфических функций платформ.
+                            </span>
+                            <h4>Призы: <a href="http://www.nokia.com/kz-ru/phones/phone/lumia1520/" target="_blank" style="text-decoration:none; color:white"> Nokia Lumia 1520</a> и <a href="http://www.nokia.com/kz-ru/phones/phone/nokia-x/" target="_blank" style="text-decoration:none; color:white"> Nokia X</a></h4>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <table>
+            <tr style="vertical-align:top">
+                <td>
+                    <a href="@Url.Action("UniversalityConditions","Register")">
+                        <button type="button" class="btn btn-info">Условия участия</button>
+                    </a>
+                </td>
+                <td>
+                    <div style="max-width:50%">
+                        <nav>
+                            <ul id="menu" style="max-width:50%;  list-style: none;">
+                                <li>
+                                    <a href="#" style=" text-decoration:none;color:white" class="btn btn-primary">Участвовать</a>
+                                    <ul style="max-width:50%;  list-style: none;">
+                                        <li></li>
+                                        <li class="btn btn-default"><a href="@Url.Action("Create","MultiPlatformApps")" style="text-decoration:none;">Мульти-платформенное приложение</a></li>
+                                        <li class="btn btn-default"><a href="@Url.Action("Create","UniversalApps")" style="text-decoration:none;">Универсальное приложение</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- /Presentation -->
+<!-- Portfolio -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <table>
+                <tr style="vertical-align:top;">
+                    <td>
+                        <div class="col-md-4 text-center">
+                            <div class="service-item">
+                                <h2><span>УЧАСТНИКИ</span></h2>
+                                <div id="members">
+                                    <a href="@Url.Action("UniversalityList","Contests", new { finishDate = "2014/11/30"})">
+                                        <h3>СЕЙЧАС УЧАСТВУЕТ</h3>
+                                        <h1>@ViewBag.Count</h1>
+                                        <h3>ПРОЕКТОВ</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>ПОСЛЕДНИЕ ДОБАВЛЕННЫЕ:</h2>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div id="navcontainer">
+                                        <h4>Универсальные</h4>
+                                        <table>
+                                            <tr>
+                                                @foreach (var item in ViewBag.LastAddedU as List<UniversalApp>)
+                                                {
+                                                    <td>
+                                                        <div class="icon" style="padding-right:20px;padding-left:20px;">
+                                                            <img src="~/Images/DuoW1.png" />
+                                                        </div>
+
+                                                        <div class="data" style="padding-right:20px;padding-left:20px;">
+                                                            <a href='@item.W8AppUrl' target="_blank">@Html.DisplayFor(modelItem => item.W8AppName)</a>
+                                                        </div>
+                                                    </td>
+                                                }
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div id="navcontainer">
+                                        <h4>Мультиплатформенные</h4>
+                                        <table>
+                                            <tr>
+                                                @foreach (var item in ViewBag.LastAddedM as List<MultiPlatformApp>)
+                                                {
+                                                    <td>
+                                                        <div class="icon" style="padding-right:20px;padding-left:20px;">
+                                                            <img src="~/Images/Mobile-Phone-Message.png" />
+                                                        </div>
+
+                                                        <div class="data" style="padding-right:20px;padding-left:20px;">
+                                                            <a href='@item.W8AppUrl' target="_blank">@Html.DisplayFor(modelItem => item.W8AppName)</a>
+                                                        </div>
+                                                    </td>
+                                                }
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Services -->
+<div id="services" class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h2>ДО ЗАВЕРШЕНИЯ КОНКУРСА</h2>
+            </div>
+        </div>
+        <div class="row" id="clock"></div>
+    </div>
+</div>
+<!-- /Services -->
+<script type="text/javascript">
+    $('#clock').countdown('2014/11/30', function (event) {
+        var $this = $(this).html(event.strftime(
+                '<div class="col-md-2 col-md-offset-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%w</i><h4>недель</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%d</i><h4>дней</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%H</i><h4>часов</h4></div></div>'
+                + '<div class="col-md-2 text-center"><div class="service-item"><i class="service-icon fa" style="color:white">%M</i><h4>минут</h4></div></div>'));
+    });
+</script>
+
+<script type="text/javascript">
+    $('nav li ul').hide().removeClass('fallback');
+    $('nav li').hover(
+      function () {
+          $('ul', this).stop().slideDown(100);
+      },
+      function () {
+          $('ul', this).stop().slideUp(100);
+      }
+    );
+</script>
+
+@*<script>
+    $(function () {
+        $("#menu").menu();
+    });
+</script>*@

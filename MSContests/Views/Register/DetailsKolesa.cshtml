@@ -1,0 +1,114 @@
+﻿@model MSContests.Models.UploadRequest
+@{
+    ViewBag.Title = "Детали заявки";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("IndexKolesa", "Register")"></a>
+    </div>
+</div>
+
+<div class="page-region">
+    <div class="page-region-content">
+        <div class="page-control" data-role="page-control">
+            <ul>
+                <li class="active"><a href="#frame1">Данные заявителя</a></li>
+                <li><a href="#frame2">Файлы</a></li>
+            </ul>
+            <div class="frames">
+                <div class="frame active" id="frame1">
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.RegisterDate)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.RegisterDate)<br />
+                    </div>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.ApprovalDate)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.ApprovalDate)<br />
+                    </div>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.Approved)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Approved)<br />
+                    </div>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.LastName)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.LastName)<br />
+                    </div>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.FirstName)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.FirstName)<br />
+                    </div>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.Email)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Email)<br />
+                    </div>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.City)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.City)<br />
+                    </div>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.Position)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Position)<br />
+                    </div>
+
+                    <div class="display-label">
+                        <b>@Html.DisplayNameFor(model => model.Comments)</b>
+                    </div>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Comments)<br />
+                    </div>
+                </div>
+                <div class="frame" id="frame2">
+                    @using (Html.BeginForm("W8Download", "Register", FormMethod.Post, new {enctype = "multipart/form-data"}))
+                    {
+                        <p>
+                            <input type="hidden" value="@ViewBag.id" name="id" id="id"/>
+                            <input type="submit" value="Скачать Windows 8 пакет" />
+                        </p>
+                        
+                    }
+                    @using (Html.BeginForm("WPDownload", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <p>
+                            <input type="hidden" value="@ViewBag.id" name="id" id="id" />
+                            <input type="submit" value="Скачать WP пакет" />
+                        </p>
+                        
+                    }
+                </div>
+            </div><br/>
+            <p>
+                <a title="Редактировать" href="@Url.Action("EditKolesaAdm", "Register", new { id=Model.Id })"><button>Редактировать</button></a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,216 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@model MSContests.Models.UploadRequest
+
+@{
+    ViewBag.Title = "Зарегистрироваться для участия в конкурсе 'Колёса+'";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("Kolesa", "Contests")"></a>
+    </div>
+</div>
+<div class="page-region">
+    <div class="page-region-content">
+        <fieldset>
+            <h1>@ViewBag.Title</h1>
+            <br />
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <div class="grid">
+                    <div class="row">
+                        <div class="span5">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.LastName)
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.LastName)<br />
+                                @Html.ValidationMessageFor(model => model.LastName)
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.FirstName)
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.FirstName)<br />
+                                @Html.ValidationMessageFor(model => model.FirstName)
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.Email)
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Email)<br />
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.City)
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.City)
+                                @Html.ValidationMessageFor(model => model.City)
+                            </div>
+                        </div>
+                        <div class="span5">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.Position)
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.Position)
+                                @Html.ValidationMessageFor(model => model.Position)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @Html.MathCaptcha("Обновить", "Антиспам проверка")
+                <div class="form__footer">
+                    <div>
+                        Заявки проходят модерацию <br>в течение двух рабочих дней.
+                    </div><br />
+                    <input type="submit" value="Отправить заявку" />
+                </div>
+            }
+        </fieldset>
+        <fieldset>
+            <h1>Загрузить пакеты приложений</h1>
+            <br/>
+            <a href="@Url.Action("EditKolesa","Register")">
+                <button class="active">Загрузить</button>
+            </a>
+            <br/>
+        </fieldset>
+    </div>
+</div>
+
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+            <script src="~/Scripts/Kendo/kendo.core.min.js"></script>
+            <script src="~/Scripts/Kendo/kendo.upload.min.js"></script>
+            <script src="~/Scripts/Kendo/kendo.web.min.js"></script>
+            <link href="~/Content/Kendo/kendo.common.min.css" rel="stylesheet" />
+            <link href="~/Content/Kendo/kendo.default.min.css" rel="stylesheet" />
+            <script id="fileTemplate" type="text/x-kendo-template">
+                <span class='k-progress'></span>
+                <div class='file-wrapper'>
+                    <span class='file-icon #=addExtensionClass(files[0].extension)#'></span>
+                    <h4 class='file-heading file-name-heading'>Имя: #=name#</h4>
+                    <h4 class='file-heading file-size-heading'>Размер: #=size# bytes</h4>
+                    <button type='button' class='k-upload-action'></button>
+                </div>
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $("#FileW8").kendoUpload({
+                        multiple: false,
+                        async: {
+                            saveUrl: "save",
+                            removeUrl: "remove",
+                            autoUpload: false
+                        },
+                        template: kendo.template($('#fileTemplate').html())
+                    });
+                });
+
+                function addExtensionClass(extension) {
+                    switch (extension) {
+                        case '.jpg':
+                        case '.img':
+                        case '.png':
+                        case '.gif':
+                            return "img-file";
+                        case '.doc':
+                        case '.docx':
+                            return "doc-file";
+                        case '.xls':
+                        case '.xlsx':
+                            return "xls-file";
+                        case '.pdf':
+                            return "pdf-file";
+                        case '.zip':
+                        case '.rar':
+                        case '.xap':
+                            return "zip-file";
+                        default:
+                            return "default-file";
+                    }
+                }
+            </script>
+
+            <style scoped>
+                .file-icon {
+                    display: inline-block;
+                    float: left;
+                    width: 48px;
+                    height: 48px;
+                    margin-left: 10px;
+                    margin-top: 13.5px;
+                }
+
+                .img-file {
+                    background-image: url(../../content/web/jpg.png);
+                }
+
+                .doc-file {
+                    background-image: url(../../content/web/doc.png);
+                }
+
+                .pdf-file {
+                    background-image: url(../../content/web/pdf.png);
+                }
+
+                .xls-file {
+                    background-image: url(../../content/web/xls.png);
+                }
+
+                .zip-file {
+                    background-image: url(../../content/web/zip.png);
+                }
+
+                .default-file {
+                    background-image: url(../../content/web/default.png);
+                }
+
+                #example .file-heading {
+                    font-family: Arial;
+                    font-size: 1.1em;
+                    display: inline-block;
+                    float: left;
+                    width: 450px;
+                    margin: 0 0 0 20px;
+                    height: 25px;
+                    -ms-text-overflow: ellipsis;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                #example .file-name-heading {
+                    font-weight: bold;
+                }
+
+                #example .file-size-heading {
+                    font-weight: normal;
+                    font-style: italic;
+                }
+
+                li.k-file .file-wrapper .k-upload-action {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+
+                li.k-file div.file-wrapper {
+                    position: relative;
+                    height: 75px;
+                }
+            </style>
+        }

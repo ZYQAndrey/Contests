@@ -1,0 +1,135 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Золотая осень!";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+}
+
+<div class="callout2">
+    <div class="vert-text">
+        <h1>@ViewBag.Title</h1>
+        <h4>Золотая осень, плавно переходящая в зиму :) !</h4>
+    </div>
+</div>
+<!-- Intro -->
+<div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <p class="lead">
+                    Закончилась осень, закончился год и закончился конкурс приложений "Золотая осень!"<br />
+                    Ребята постарались и, несмотря на загруженность (ведь для многих только закончилась сессия), написали по 1-2 приложения!<br />
+                    Больше всего порадовали авторы, создавшие приложения сразу для двух платформ - Windows 8 и Windows Phone!<br />
+                    Жюри решило немного изменить названия категорий, в которых выбраны лучшие приложения, но мы считаем, что это более объективно отражает результаты.<br />
+                    Имена победителей в категориях следующие...
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Intro -->
+<!-- Presentation -->
+<div class="call-to-action">
+    <div class="container">
+        <h2><span>ПОБЕДИТЕЛИ И ПРИЗЫ</span></h2>
+        <ol class="round">
+            <li class="one">
+                <h3>Лучшая пара приложений для Windows Phone и Windows 8</h3>
+                <span>Жюри решило, что самой интересной (и полезной) парой приложений является "Расчёт по упрощённой декларации для ИП", созданная <b>Василием Морозовым</b> из Алматы (компания "UP Development"). Приложения будут полезны казахстанским индивидуальным предпринимателям в период сдачи налоговой декларации. Теперь они могут создавать отчёты как на своих планшетах, так и на смартфонах.</span><br />
+                Приз - <a href="http://www.youtube.com/watch?v=G5MwmTZ8q80">Nokia Lumia 1020</a>
+            </li>
+            <li>
+            <li class="two">
+                <h3>Лучшее приложение в категории "Развлечения"</h3>
+                <span>В этой категории победил <b>Дулат Ходжаберген</b> с приложением "Фильмы Онлайн". Приложение очень удобно и позволяет смотреть фильмы с планшетов без рекламы и необходимости установки дополнительных кодеков! Проверено жюри! В этой же категории он создал и приложение "Жизнь разработчиков", которое, несомненно, будет интересно посмотреть всем, кто связан с разработкой :) </span><br />
+                Приз - <a href="http://www.youtube.com/watch?v=APPu2ZkkXOQ">Nokia Lumia 925</a>
+            </li>
+            <li class="three">
+                <h3>Мобильная жизнь</h3>
+                <span>Это дополнительная категория, которую мы решили добавить, чтобы наградить разработавших приложения для Windows Phone. В ней победителем стал <b>Koishybayev Igibek</b> c приложениями "Zerek Flashcards" и "Life Goals"</span><br />
+                Приз - <a href="http://www.youtube.com/watch?v=gXmzVtYuDHE&list=PLGLlbyma4Kg7imCBMTcy2jNVt_dfhJzTL">Nokia Lumia 520 (developer edition)</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<!-- /Presentation -->
+<!-- Portfolio -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <table>
+                <tr style="vertical-align:top;">
+                    <td>
+                        <div class="col-md-4 text-center">
+                            <div class="service-item">
+                                <h3><span>УЧАСТНИКИ</span></h3>
+                                <div id="members">
+                                    <a href="@Url.Action("FallWinterList","Contests", new { finishDate = "2013/12/31"})">
+                                        <p>В КОНКУРСЕ УЧАСТВОВАЛО</p>
+                                        <h1>@ViewBag.Count</h1>
+                                        <p>ПРОЕКТОВ</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h3>ПОСЛЕДНИЕ ДОБАВЛЕННЫЕ:</h3>
+                        <div id="navcontainer">
+                            <ul>
+                                @foreach (Request item in ViewBag.lastAdded)
+                                {
+                                    <li>
+                                        <div class="icon">
+                                            <img src="~/Images/WP8.png" />
+                                        </div>
+
+                                        <div class="data">
+                                            <a href="@Html.DisplayFor(modelItem => item.WPhoneAppUrl)" target="_blank">@Html.DisplayFor(modelItem => item.AppName)</a>
+                                            @if (item.Windows8App)
+                                            {
+                                                <span> + </span><img src="~/Images/Windows8.png" /><a href="@Html.DisplayFor(modelItem => item.AppUrl)" target="_blank">Windows 8</a>
+                                            }
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- /Portfolio -->
+<!-- Call to Action -->
+<div class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                Поздравляем победителей и благодарим всех, кто принял участие в конкурсе и представил свои проекты!!!
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Call to Action -->
+@*<script type="text/javascript" charset="utf-8">
+    // Javascript
+    $(function () {
+        var currentDate = new Date();
+        $('div#clock').countdown("2013/12/31", function (event) {
+            $this = $(this);
+            switch (event.type) {
+                case "seconds":
+                case "minutes":
+                case "hours":
+                case "days":
+                case "weeks":
+                case "daysLeft":
+                    $this.find('span#' + event.type).html(event.value);
+                    break;
+                case "finished":
+                    $this.fadeTo('slow', .5);
+                    break;
+            }
+        });
+    });
+</script>*@

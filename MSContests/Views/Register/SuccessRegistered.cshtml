@@ -1,0 +1,52 @@
+﻿@model MSContests.Models.UploadRequest
+
+@{
+    ViewBag.Title = "Регистрация прошла успешно";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action(ViewBag.BackLinkEvent, "Contests")"></a>
+    </div>
+</div>
+
+<div class="page-region">
+    <div class="page-region-content">
+        <fieldset>
+            <h2>Благодарим за участие в конкурсе! Ваша заявка принята на рассмотрение!</h2>
+            <h3>Желаем хорошего кодинга!</h3>
+        </fieldset>
+        <fieldset>
+            <legend>ЗАЯВКА НА УЧАСТИЕ</legend>
+            <h3>Пожалуйста, распечатайте, либо сохраните где-нибудь информацию, представленную ниже.</h3>
+            <h4>Номер заявки понадобится Вам для получения приза и для загрузки/изменения пакетов ваших приложений в ходе соревнования.</h4><br />
+            <div>
+                <b>Номер заявки:</b><br />
+                @Html.DisplayFor(model => model.Id)
+            </div>
+            <br />
+            <div>
+                <b>@Html.DisplayName("Соревнование"):</b><br />
+                Колёса+
+            </div>
+            <br />
+            <div>
+                <b>Участник:</b><br />
+                @Html.DisplayFor(model => model.FirstName)&nbsp;@Html.DisplayFor(model => model.LastName)
+            </div>
+            <hr/>
+            <h4>Информация по API понадобится Вам для написания приложения</h4>
+            Документация API: <br />
+            <a href="https://dl.dropbox.com/u/5064925/kolesa-api-docs/index.html" target="blank">https://dl.dropbox.com/u/5064925/kolesa-api-docs/index.html </a><br /><br />
+
+            Доступ к API (ограничен по функционалу уровнем public):<br />
+            appId: 375737268330<br />
+            appKey: af2136e90dc25b6a1bc9d84b88b10c49 <br />
+        </fieldset>
+        <fieldset>
+            <a class="upload-button big page-back" title="Загрузить пакеты" href="@Url.Action(ViewBag.UploadLink, "Register", new { id = Model.Id })"></a>
+            <br />Загрузить пакеты
+        </fieldset>
+</div>
+</div>

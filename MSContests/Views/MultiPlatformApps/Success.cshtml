@@ -1,0 +1,36 @@
+﻿@model MSContests.Models.MultiPlatformApp
+@{
+    ViewBag.Title = "ЗАЯВКА НА УЧАСТИЕ ПРИНЯТА ";
+    ViewBag.SubTitle = "Благодарим за участие в конкурсе! Ваша заявка принята на рассмотрение!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action(ViewBag.BackLink, "Contests")"></a>
+    </div>
+</div>
+<h3>@ViewBag.SubTitle</h3>
+<br/>
+<div class="page-region">
+    <div class="page-region-content">
+        <h4>Пожалуйста, распечатайте, либо сохраните где-нибудь информацию, представленную ниже. Номер заявки может понадобиться Вам для получения приза.</h4><br />
+        <div>
+            <b>Номер заявки:</b><br />
+            <h2>@Html.DisplayFor(model => model.Id)</h2>
+        </div>
+        <br />
+        <div>
+            <b>Приложение:</b><br />
+            @Html.DisplayFor(model => model.W8AppName)
+        </div>
+        <br />
+        <div>
+            <b>Автор:</b><br />
+            @Html.DisplayFor(model => model.Competitor.FirstName)&nbsp;@Html.DisplayFor(model => model.Competitor.LastName)
+        </div>
+        <br />
+    </div>
+</div>
+

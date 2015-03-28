@@ -1,0 +1,76 @@
+﻿@model IEnumerable<MSContests.Models.Request>
+
+@{
+    ViewBag.Title = "Список приложений";
+}
+<script src="~/Scripts/kendo.all.min.js"></script>
+<script src="~/Scripts/kendo.datepicker.min.js"></script>
+<link href="~/Content/kendo.common.min.css" rel="stylesheet" />
+<link href="~/Content/kendo.metro.min.css" rel="stylesheet" />
+
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("FallWinter", "Contests")"></a>
+    </div>
+</div>
+ 
+<div class="page-region">
+    <div class="page-region-content">
+        @using (Html.BeginForm("Index", "Register", FormMethod.Get))
+        {
+            <div class="input-control text" style="width: 40%">
+                @Html.TextBox("name", "", new {@placeholder = "Введите название команды..."})
+                <button class="btn-search"></button>
+            </div>
+            <div>
+                Выберите дату:
+                <input id="datepicker" value="06.04.2013" style="width:150px;" name="date"/>
+                <button class="mini bg-color-white"><i class="icon-filter"></i></button>
+            </div>
+        }
+        <br/>
+        <div style="width: 50%">
+            <table class="bordered hovered">
+                <tr>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.AppName)</b>
+                    </th>
+                    <th>
+                        <b>@Html.DisplayNameFor(model => model.Approved)</b>
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AppName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Approved)
+                        </td>
+                        <td>
+                            @*<div class="toolbar">*@
+                            <a title="Редактировать" href="@Url.Action("Edit", "Register", new { id=item.Id })"><i class="icon-pencil"></i></a>
+                            <a title="Детали" href="@Url.Action("Details", "Register", new { id=item.Id })"><i class="icon-info-2"></i></a>
+                            <a title="Удалить" href="@Url.Action("Delete", "Register", new { id=item.Id })"><i class="icon-remove"></i></a>
+                            @*</div>*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        // create DatePicker from input HTML element
+        $("#datepicker").kendoDatePicker();
+    });
+</script>
+
+        

@@ -1,0 +1,117 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Добавь Наурыз в Windows Store!";
+    Layout = "~/Views/Shared/_WideLayout.cshtml";
+}
+
+<div class="callout4">
+    <div class="vert-text">
+        <h1>@ViewBag.Title</h1>
+        <h4>Конкурс "Добавь Наурыз в Windows Store" завершён!</h4>
+    </div>
+</div>
+
+<!-- Intro -->
+<div id="about" class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <p class="lead">
+                    Конкурс «Добавь Наурыз в Windows Store!» завершился и пришло время подвести его итоги! За время конкурса было создано 8 приложений под Windows 8 и 3 приложения под Windows Phone!
+                    Мы благодарим всех участников конкурса за проявленный энтузиазм и отличные приложения! И хотя порой опубликовать приложения, пройдя проверки и сертификации было не так уж и просто, ребята смогли сделать это и сегодня мы можем пользоваться прекрасными плодами их труда!
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Intro -->
+<!-- Presentation -->
+<div class="call-to-action">
+    <div class="container">
+        <h2><span>ПОБЕДИТЕЛИ И ПРИЗЫ</span></h2>
+
+        <ol class="round">
+            <li class="one">
+                <h3>Самое рейтинговое приложение</h3>
+                <span>Самым рейтинговым приложением за время конкурса стала игра <a href="http://apps.microsoft.com/windows/kk-kz/app/59796250-8057-4341-ab59-8baa13f7bd99">"Кыз Куу" (догони девушку)</a>, созданная в Астане Валиханом Бектуровым! Отлично, Астана! Так держать!</span>
+            </li>
+            <li class="two">
+                <h3>Самое популярное приложение за время конкурса</h3>
+                <span>Самым популярным приложением (по количеству закачек) стал русско-казахский переводчик <a href="http://apps.microsoft.com/windows/kk-kz/app/soylem-mt/aae154e7-7d98-4607-97de-7eb5dc957383">"SOYLEM MT"</a>. Авторы - ребята из Астаны (компания LimeOn)!</span>
+            </li>
+            <li class="three">
+                <h3>Самое популярное студенческое приложение за время конкурса</h3>
+                <span>В этой категории победило приложение <a href="http://apps.microsoft.com/windows/ru-ru/app/my-almaty-city/c338fb80-42bd-4af4-956d-c104ca93633d">My Almaty City</a>, созданное студентом Даулетом Булегеновым из Алматы (МУИТ) </span>
+            </li>
+        </ol>
+        <hr />
+        <h2><span>СПЕЦИАЛЬНЫЙ ПРИЗ</span></h2>
+        <h3>Создайте ваше приложение для двух платформ (Windows 8 и Windows Phone) и получите специальный приз: Nokia Lumia</h3>
+        <span>В этой категории лучшим признано приложение "Nur Translator", имеющее реализацию как для <a href="http://apps.microsoft.com/windows/app/nur-translator/e0332ea4-abef-4931-9b38-62f8c09a668a ">Windows 8</a>, так и для <a href="http://www.windowsphone.com/ru-ru/store/app/nur-translator/1a7906fe-d518-4cdb-9c33-e9102b99272f">Windows Phone!</a> Автор - Михаил Шубин, студент АУЭС</span>
+    </div>
+</div>
+<!-- /Presentation -->
+<!-- Portfolio -->
+<div id="services" class="services">
+    <div class="container">
+        <div class="row">
+            <table>
+                <tr style="vertical-align:top;">
+                    <td>
+                        <div class="col-md-4 text-center">
+                            <div class="service-item">
+                                <h2><span>УЧАСТНИКИ</span></h2>
+                                <div id="members">
+                                    <a href="@Url.Action("List","Contests", new { finishDate = "2013/03/23"})">
+                                        <p>В КОНКУРСЕ УЧАСТВОВАЛО</p>
+                                        <h1>@ViewBag.Count</h1>
+                                        <p>ПРОЕКТОВ</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-2 col-md-offset-0 text-center">
+                            <div class="service-item">
+                                <h2>ПОСЛЕДНИЕ ДОБАВЛЕННЫЕ:</h2>
+                                <div id="navcontainer">
+                                    <ul>
+                                        @foreach (Request item in ViewBag.lastAdded)
+                                        {
+                                            <li>
+                                                <div class="icon">
+                                                    <img src="~/Images/Windows8.png" />
+                                                </div>
+
+                                                <div class="data">
+                                                    <a href="@Html.DisplayFor(modelItem => item.AppUrl)" target="_blank">@Html.DisplayFor(modelItem => item.AppName)</a>
+                                                    @if (item.WPhone8App)
+                                                    {
+                                                        <span> + </span><img src="~/Images/WP8.png" /><a href="@Html.DisplayFor(modelItem => item.WPhoneAppUrl)" target="_blank">WP</a>
+                                                    }
+                                                </div>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- /Portfolio -->
+<!-- Call to Action -->
+<div class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                Поздравляем победителей и благодарим всех, кто принял участие в конкурсе и представил свои проекты!!!<br />
+                <span>Победители могут получить призы в офисах Майкрософт Казахстан в <a href="../Address/Astana">Астане</a> и/или <a href="../Address/Almaty">Алматы</a> </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Call to Action -->

@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Добавить пакеты к Вашей заявке";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("Kolesa", "Contests")"></a>
+    </div>
+</div>
+<div class="page-region">
+    <div class="page-region-content">
+        <fieldset>
+            <div class="span5">
+                <div class="editor-label">
+                    Введите код, полученный при регистрации:
+                </div><br />
+                @using (Html.BeginForm())
+                {
+                    <div class="editor-field">
+                        @Html.TextBox("code")
+                    </div><br />
+                    <input type="submit" value="Открыть страницу загрузки" />
+                }
+            </div>
+            <div style="color: red">@ViewBag.Message</div>
+        </fieldset>
+    </div>
+</div>
+

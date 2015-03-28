@@ -1,0 +1,53 @@
+﻿@model MSContests.Models.UploadRequest
+
+@{
+    ViewBag.Title = "Управление заявкой на Колёса";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("IndexKolesa", "Register")"></a>
+    </div>
+</div>
+
+<div class="page-region">
+    <div class="page-region-content">
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Заявка на участие в конкурсе</legend>
+
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.LastName)
+                @Html.HiddenFor(model => model.Position)
+                @Html.HiddenFor(model => model.RegisterDate)
+                @Html.HiddenFor(model => model.RowVersion)
+                @Html.HiddenFor(model => model.ApprovalDate)
+                @Html.HiddenFor(model => model.City)
+                @Html.HiddenFor(model => model.Email)
+                @Html.HiddenFor(model => model.FirstName)
+                <br/>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Approved)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Approved)
+                    @Html.ValidationMessageFor(model => model.Approved)
+                </div>
+            </fieldset>
+        <br/>
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+        }
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+
+    </div>
+</div>

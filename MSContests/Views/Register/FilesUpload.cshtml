@@ -1,0 +1,67 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@model MSContests.Models.UploadRequest
+
+@{
+    ViewBag.Title = "Добавить пакеты к Вашей заявке";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("Kolesa", "Contests")"></a>
+    </div>
+</div>
+<div class="page-region">
+    <div class="page-region-content">
+        <br />
+
+        <br />
+        @using (Html.BeginForm("FilesUpload", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <fieldset>
+                <div class="grid">
+                    <div class="row">
+                        <div class="span5">
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.FileW8)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(m => m.FileW8, new { type = "file" })
+                                @Html.ValidationMessageFor(m => m.FileW8)<br/>
+                                <span style="font-size:x-small">Архив (zip, rar etc.) включающий файл .appxupload и содержимое папки с соответствующим именем</span>
+                            </div><br />
+
+                            <div class="editor-label">
+                                @Html.LabelFor(model => model.FileWp8)
+                            </div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(m => m.FileWp8, new { type = "file" })
+                                @Html.ValidationMessageFor(m => m.FileWp8)<br/>
+                                <span style="font-size:x-small">.xap файл проекта</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                @Html.MathCaptcha("Обновить", "Антиспам проверка")
+
+                <div class="form__footer">
+                    <div>
+                        Заявки проходят модерацию <br>в течение двух рабочих дней.
+                    </div><br />
+                    <input type="submit" value="Загрузить файлы" />
+                </div>
+            </fieldset>
+        }
+        <fieldset>
+            <h3>Материалы и API</h3><br />
+            Документация API: <br />
+            <a href="https://dl.dropbox.com/u/5064925/kolesa-api-docs/index.html" target="blank">https://dl.dropbox.com/u/5064925/kolesa-api-docs/index.html </a><br /><br />
+
+            Доступ к API (ограничен по функционалу уровнем public):<br />
+            appId: 375737268330<br />
+            appKey: af2136e90dc25b6a1bc9d84b88b10c49 <br />
+        </fieldset>
+    </div>
+</div>

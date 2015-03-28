@@ -1,0 +1,23 @@
+﻿@model MSContests.Models.UploadRequest
+
+@{
+    ViewBag.Title = "Пакеты успешно загружены";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action(ViewBag.BackLinkEvent, "Contests")"></a>
+    </div>
+</div>
+
+<div class="page-region">
+    <div class="page-region-content">
+        <fieldset>
+            <h2>Благодарим за участие в конкурсе! Ваши пакеты благополучно загружены!</h2>
+            <h3>Желаем хорошего кодинга!</h3>
+        </fieldset>
+    </div>
+</div>
+
+

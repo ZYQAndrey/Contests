@@ -1,0 +1,190 @@
+﻿@using MSContests.Models
+@{
+    ViewBag.Title = "Золотая осень!";
+}
+
+<div class="page-header">
+    <div class="page-header-content">
+        <h1>@ViewBag.Title</h1>
+        <a class="back-button big page-back" title="Назад" href="@Url.Action("Index", "Home")"></a>
+    </div>
+</div>
+
+<div class="page-region">
+    <div class="page-region-content">
+        <fieldset class="bg-image-romashka">
+            <legend>Золотая осень, плавно переходящая в зиму :) !</legend>
+            <div>
+                <div style="float: right">
+                    <h2><span style="margin: 0px 40px; font-weight: bold" class="fg-color-white">ДО ЗАВЕРШЕНИЯ КОНКУРСА</span></h2>
+                    <div>
+                        <div id="clock">
+                            <p>
+                                <span id="weeks"></span>
+                                <span style="padding: 20px; font-size: 12px">НЕДЕЛИ</span>
+                            </p>
+                            <div class="space">:</div>
+                            <p>
+                                <span id="daysLeft"></span>
+                                <span style="padding: 20px; font-size: 12px">ДНИ</span>
+                            </p>
+                            <div class="space">:</div>
+                            <p>
+                                <span id="hours"></span>
+                                <span style="padding: 20px; font-size: 12px">ЧАСЫ</span>
+                            </p>
+                            <div class="space">:</div>
+                            <p>
+                                <span id="minutes"></span>
+                                <span style="padding: 20px; font-size: 12px">МИНУТЫ</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="fg-color-white">
+                    <div class="page-region">
+                        <div class="page-region-content">
+                            <img src="~/Images/image134.jpg" style="float: left;margin: 0 30px 0 0 " width="150" />
+                            Унылая пора! Очей очарованье!<br />
+                            Приятна мне твоя прощальная краса —<br />
+                            Люблю я пышное природы увяданье,<br />
+                            В багрец и в золото одетые леса,<br />
+                            В их сенях ветра шум и свежее дыханье,<br />
+                            И мглой волнистою покрыты небеса,<br />
+                            И редкий солнца луч, и первые морозы,<br />
+                            И отдаленные седой зимы угрозы.<br /><br />
+                            А.С.Пушкин
+                        </div>
+                    </div>
+                </h4>
+                <h3 class="fg-color-white">
+                    Кому из нас не знакомы эти строки великого поэта? Поэзия создаёт романтическое настроение. Это вдохновение мы,
+                    программеры, можем выразить в замечательных приложениях!
+                    Так давайте же покодим и создадим нетленные шедевры для Windows Phone и Windows 8!<br />
+                    В этот раз тема не задана, можно писать всё, что душе угодно! Если кто-то воссоздаст шедевральные приложения с других платформ - как говорится, welcome! ;)
+                </h3>
+            </div>
+        </fieldset>
+
+        <div>
+            <h2><span>ПРИЗЫ</span></h2>
+            <div class="grid">
+                <h4>Призов будет меньше, но они круты до невероятности. На кону - Nokia Lumia 1020 и Lumia 925</h4>
+                <div class="row">
+                    <div class="span10">
+                        <ol class="round">
+                            <li class="one">
+                                <h3>Лучшее приложение</h3>
+                                <span>Приложение выбирается жюри Майкрософт Казахстан. Критерии: богатый функционал, нативный Windows Phone или Windows 8 дизайн, использование новых функций Windows Phone 8 и Windows 8.1 (разные размеры живых тайлов, новые карты, работа с голосовыми сервисами, работа с экраном блокировки и т.д.) </span>
+                            </li>
+                            <li>
+                            <li class="two">
+                                <h3>Лучшая игра для смартфона</h3>
+                                <span>Выбираем лучшую, самую интересную игру. Выбирается по совокупности оценок пользователей приложения в Windows Phone Store и/или в Windows Store и оценке жюри Майкрософт Казахстан.</span>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="offset10">
+                        <div class="carousel" data-role="carousel" style="height: 300px; width: 483px;" data-param-effect="slide" data-param-direction="left" data-param-duration="2000" data-param-period="4000">
+                            <div class="slides">
+                                <div class="slide mixed" id="slide1">
+                                    <img src="~/Images/Nokia-Lumia-1020-with-Nokia-Pro-Camera.jpg" height="300" />
+                                    <div class="description">
+                                        <a href="http://www.youtube.com/watch?v=G5MwmTZ8q80" target="_blank"> Nokia Lumia 1020 за лучшее приложение</a>
+                                    </div>
+                                </div>
+
+                                <div class="slide mixed" id="slide2">
+                                    <img src="~/Images/Nokia-Lumia-925.jpg" height="300" />
+                                    <div class="description">
+                                        <a href="http://www.youtube.com/watch?v=APPu2ZkkXOQ" target="_blank"> Nokia Lumia 925 за лучшую игру</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="@Url.Action("FallWinterConditions","Register")">
+                    <button type="button">Условия участия</button>
+                </a>
+                <a href="@Url.Action("CreateWP","Register")">
+                    <button class="active">Участвовать</button>
+                </a>
+            </div>
+            <hr />
+            <div class="grid">
+                <div class="row">
+                    <div class="span2">
+                        <h2><span>УЧАСТНИКИ</span></h2>
+                        <a href="@Url.Action("FallWinterList","Contests", new { finishDate = "2013/12/31"})">
+                            <div class="tile bg-color-blue" data-role="tile-slider" data-param-period="3000">
+                                <div class="tile-content" style="text-align: center">
+                                    <h3>В ДАННОЕ ВРЕМЯ</h3>
+                                </div>
+                                <div class="tile-content" style="text-align: center">
+                                    <h3>В КОНКУРСЕ УЧАСТВУЕТ</h3>
+                                </div>
+                                <div class="tile-content" style="text-align: center">
+                                    <h1>@ViewBag.Count</h1>
+                                    <br />
+                                    <h3>ПРОЕКТОВ</h3>
+                                </div>
+                                <div class="brand">
+                                    <img class="icon" src="~/Images/Curly_Brackets.png" />
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="offset10">
+                        <div style="padding-left: 30px">
+                            <h2>ПОСЛЕДНИЕ ДОБАВЛЕННЫЕ:</h2>
+                            <ul class="listview fluid">
+                                @foreach (Request item in ViewBag.lastAdded)
+                                {
+                                    <li>
+                                        <div class="icon">
+                                            <img src="~/Images/WP8.png" />
+                                        </div>
+
+                                        <div class="data">
+                                            <a href="@Html.DisplayFor(modelItem => item.WPhoneAppUrl)" target="_blank">@Html.DisplayFor(modelItem => item.AppName)</a>
+                                            @if (item.Windows8App)
+                                            {
+                                                <span> + </span><img src="~/Images/Windows8.png" /><a href="@Html.DisplayFor(modelItem => item.AppUrl)" target="_blank">Windows 8</a>
+                                            }
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    // Javascript
+    $(function () {
+        var currentDate = new Date();
+        $('div#clock').countdown("2013/12/31", function (event) {
+            $this = $(this);
+            switch (event.type) {
+                case "seconds":
+                case "minutes":
+                case "hours":
+                case "days":
+                case "weeks":
+                case "daysLeft":
+                    $this.find('span#' + event.type).html(event.value);
+                    break;
+                case "finished":
+                    $this.fadeTo('slow', .5);
+                    break;
+            }
+        });
+    });
+</script>
+
